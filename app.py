@@ -1,247 +1,190 @@
-import tkinter as tk
 from tkinter import *
+from tkinter import filedialog
+from tkinter import messagebox
 from pytube import YouTube
-from tkinter import messagebox, filedialog
-from tkinter.ttk import Progressbar
-import time
 from PIL import Image, ImageTk
- 
-# Defining CreateWidgets() function
-# to create necessary tkinter widgets
-
-def Widgets():
-     
-    load = Image.open("YouTube.jpg")
-    render = ImageTk.PhotoImage(load)
-    img = Label(root, 
-					    image=render, 
-					    bg = 'palegreen')
-    img.image = render
-    img.grid(row=1, 
-    					column=1,
-    					padx=1,
-					    pady=10)    
-    l = Label(root,text= ' ', bg = 'palegreen')
-    l.grid(row=1, column = 4000)
-        
-    head_label = Label(root, text='''   YouTube Video Downloader Using Tkinter''',
-                       padx=15,
-                       pady=15,
-                       font="verdana 14",
-                       bg = 'palegreen',
-                       fg="blue")
-
-    head_label.grid(row=2,
-                    column=0,
-                    pady=10,
-                    padx=5,
-                    columnspan=3)
- 
-
-    link_label = Label(root,
-                       text="YouTube link :",
-                       bg="salmon",
-                       pady=5,
-                       padx=5,
-                       fg = 'white')
-
-    link_label.grid(row=3,
-                    column=0,
-                    pady=5,
-                    padx=5)
-
-    root.linkText = Entry(root,
-                          width=30,
-                          textvariable=video_Link,
-                          font="Arial 14")
-
-    root.linkText.grid(row=3,
-                       column=1,
-                       pady=5,
-                       padx=5,
-                       columnspan=2)
-								    
-    destination_label = Label(root,
-                              text="Destination :",
-                              bg="salmon",
-                              pady=5,
-                              padx=9,
-                              fg = 'white')
-                              
-    destination_label.grid(row=4,
-                           column=0,
-                           pady=5,
-                           padx=5)
-
-    root.destinationText = Entry(root,
-                                 width=27,
-                                 textvariable=download_Path,                                 font="Arial 14")
-
-    root.destinationText.grid(row=4,
-                              column=1,
-                              pady=5,
-                              padx=5)
 
 
-    browse_B = Button(root,
-                      text="Browse storage",
-                      command=Browse,
-                      width=10,
-                      bg="bisque",
-                      relief=GROOVE)
+def clickDownload():
+    if getURL.get() == "":
+        messagebox.showinfo("ERROR", "ENTER url please!")
+        return
+    elif getLoc.get() == "":
+        messagebox.showinfo("ERROR", "ENTER LOCATION ")
+        return
 
-    browse_B.grid(row=5,
-                  column=1,
-                  pady=1,
-                  padx=1)
+    select = listbox.curselection()
+    quality = videos[select[0]]
+    location = getLoc.get()
+    quality.download(location)
+    messagebox.showinfo(
+        "Downloading Finish", yt.title + " has been downloaded Sucessfully!!!"
+    )
 
-    Download_B = Button(root,
-                        text="Download Video",
-                        command=Download,
-                        width=20,
-                        bg="thistle1",
-                        pady=10,
-                        padx=15,
-                        relief=GROOVE,
-                        font="Georgia, 13")
 
-    Download_B.grid(row=6,
-                    column=1,
-                    pady=20,
-                    padx=20)
+def setURL():
+    # Get URL of the Video
+    url = getURL.get()
+    print(url)
 
-#adding aprogress bar to show the video download progress	
-    vidsize = Button(root,
-    	  			text = '''Clickhere 
-to see video size
- first''',
-    					command = vsize,
-    					pady=20,
-    					padx=1,
-    					font = 'Arial 10',
-    					bg="thistle1",
-    					fg='red',
-    					relief= GROOVE)
-    
-    vidsize.grid(row=7,column=1)
-    
-    vidsizelabel = Label(root,
-							     textvariable = vsize,
-							     width = 20,
-							     pady=20,
-							     padx=1,
-							     fg='red',
-							     relief= GROOVE)
-    
-    vidsizelabel.grid(row = 8, 
-								    column= 1,
-								    
-								    pady=0,
-								    padx=1
-								    )
-    About_app  = Label(root,
-										text = '''This app is for downloading youtube videos,
-it is built with pytube library.
->>You can check the <<
-video size first before downloading.
->>keep an eye on my << 
-github repository for future updates
->>Remeber to fill in<<
- the link and storage before doing anything else''',
-										font = 'Arial 10',
-										bg = 'pale green',
-										fg = 'blue')
-	
-    About_app.grid(row=9,
-									column = 1,
-									pady = 10)											
-    
-					
-def vsize():
-    #Youtube_link = video_Link.get()
-#    video = YouTube(Youtube_link)
-#    video_size = video.get_highest_resolution().filesize
-    m = 'h'
-    size = m
-    (size)
-    
-# Defining Browse() to select a
-# destination folder to save the video
+    # Create Object to hold the URL
+    global yt
+    yt = YouTube(url)
+    print(yt.title)
 
-def Browse():
+    # Get the Quality of the Videos and store in the 'videos' variable
+    global videos
+    videos = yt.streams.filter(mime_type="video/mp4").all()
 
-    # Presenting user with a pop-up for
-    # directory selection. initialdir
-    # argument is optional Retrieving the
-    # user-input destination directory and
-    # storing it in downloadDirectory
+    # Get Quality and display as list in the Listbox
+    count = 1
+    for v in videos:
+        listbox.insert(END, str(count) + ". " + str(v) + "\n\n")
+        count += 1
 
-    download_Directory = filedialog.askdirectory(
-        initialdir="YOUR DIRECTORY PATH", title="Save Video")
- 
-    # Displaying the directory in the directory
-    # textbox
 
-    download_Path.set(download_Directory)
- 
-# Defining Download() to download the video
- 
-def Download():
-    # getting user-input Youtube Link
+def clickBrowse():
+    location_of_download = filedialog.askdirectory()
+    getLoc.set(location_of_download)
 
-    Youtube_link = video_Link.get()
- 
-    # select the optimal location for
-    # saving file's
 
-    download_Folder = download_Path.get()
-    # Creating object of YouTube()
+def clickReset():
+    getURL.set("")
+    getLoc.set("")
+    listbox.delete(0, END)
 
-    getVideo = YouTube(Youtube_link)
- 
-	# Getting all the available streams of the
-    # youtube video and selecting the first
-    # from the
+def get_info():
+	pass
 
-    videoStream = getVideo.streams.first()
- 
-    # Downloading the video to destination
-    # directory
+# Create Root Object
+root = Tk()
 
-    videoStream.download(download_Folder)
- 
-    # Displaying the message
+# Set Title
+root.title("""YouTube Video Dowloader""")
 
-    messagebox.showinfo("SUCCESSFULLY""DOWNLOADED AND SAVED IN\n" + download_Folder)
- 
- # progress func
+# Set size of window
 
-    #print
-						
- 	
-# Creating object of tk class
-
-root = tk.Tk()
- 
-# Setting the title, background color
-# and size of the tkinter window and
-# disabling the resizing property
-
+# Make the Window not Resizeable
 root.resizable(False, False)
-root.title("YouTube Video Downloader")
-root.config(background="palegreen")
- 
-# Creating the tkinter Variables
 
-video_Link = StringVar()
-download_Path = StringVar()
-d = StringVar()
-size = StringVar()
- 
-# Calling the Widgets() function
-Widgets()
- 
-# Defining infinite loop to run
-# application
+# Set Labels
+headLabel = Label(
+    root,
+    text=""" YOUTUBE VIDEO DOWNLOADER""",
+    font=("Century Gothic", 16),
+    bg="#149928",
+    fg="blue",
+).grid(row=0, columnspan=2, pady=5)
+
+load = Image.open("YouTube.jpg")
+render = ImageTk.PhotoImage(load)
+img = Label(root, image=render, bg="#149928")
+img.image = render
+img.grid(row=1, columnspan=2, padx=1, pady=10)
+
+urlLabel = Label(
+    root,
+    text="""YouTube
+link:""",
+    font=("Century Gothic", 15),
+    bg="#149928",
+    fg="blue",
+).grid(row=2, column=0, padx=1, pady=1)
+qualityLabel = Label(
+    root,
+    text="""SELECTi
+QUALITY""",
+    font=("Century Gothic", 15),
+    bg="#149928",
+    fg="blue",
+).grid(row=7, column=0, padx=0, pady=10)
+locLabel = Label(
+    root, text="LOCATION", font=("Century Gothic", 15), bg="#149928", fg="blue"
+).grid(row=4, column=0, padx=1, pady=10)
+
+# Get Input
+getURL = StringVar()
+getLoc = StringVar()
+
+# Set Entry
+urlEntry = Entry(
+    root,
+    font=("Century Gothic", 12),
+    textvariable=getURL,
+    width=35,
+    bd=3,
+    relief=SOLID,
+    borderwidth=1,
+).grid(row=2, column=1, padx=10, pady=10)
+locEntry = Entry(
+    root,
+    font=("Century Gothic", 12),
+    textvariable=getLoc,
+    width=35,
+    bd=3,
+    relief=SOLID,
+    borderwidth=1,
+).grid(row=4, column=1, padx=10, pady=10)
+
+# List box for video Quality
+listbox = Listbox(
+    root,
+    font=("Century Gothic", 11),
+    width=35,
+    height=12,
+    bd=3,
+    relief=SOLID,
+    borderwidth=1,
+)
+listbox.grid(row=7, column=1, padx=0, pady=0)
+
+# Set Buttons
+urlButton = Button(
+    root,
+    text="SET URL",
+    font=("Century Gothic", 10),
+    width=15,
+    relief=SOLID,
+    borderwidth=1,
+    command=setURL,
+    bg="#991483",
+    fg="yellow",
+).grid(row=3, column=1, padx=1, pady=10)
+browseButton = Button(
+    root,
+    text="BROWSE",
+    font=("Century Gothic", 10),
+    width=15,
+    relief=SOLID,
+    borderwidth=1,
+    command=clickBrowse,
+    bg="#991483",
+    fg="yellow",
+).grid(row=5, column=1, padx=1, pady=10)
+downloadButton = Button(
+    root,
+    text="DOWNLOAD",
+    font=("Century Gothic", 10),
+    width=15,
+    relief=SOLID,
+    borderwidth=1,
+    bg="#991483",
+    fg="yellow",
+    command=clickDownload,
+).grid(row=6, column=1, padx=10, pady=10)
+resetButton = Button(
+    root,
+    text="CLEAR ALL",
+    font=("Century Gothic", 10),
+    width=15,
+    relief=SOLID,
+    borderwidth=1,
+    command=clickReset,
+    bg="#991483",
+    fg="yellow",
+).grid(row=8, column=1, padx=1, pady=0)
+1qqroot.config(background="#149928")
+
+# Set an infinite loop so window stays in view
 root.mainloop()
-#shortest video = https://youtu.be/7-qGKqveZaM
+# sample video ==> https://youtu.be/7-qGKqveZaM
