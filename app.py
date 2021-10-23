@@ -44,7 +44,7 @@ while running:
 			choice = int(input('choose prefered itag: '))
 			stm = yt.streams.get_by_itag(choice)
 			
-			print(f'Video saved in {stm.download()}\nDone.\n')
+			print(f'Video saved in {stm.download()}\nDone.\n\n')
 		
 	# playlist
 	# https://youtube.com/playlist?list=PL8JRTKSSfvuooZXI4TE_9qB01Ua-BdY_k
