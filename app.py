@@ -70,8 +70,4 @@ while running:
 			        print(v.streams.first().download(),'done')		    
 				
 else:
-
 	print('\nDone \nThank you for using my program.\nHope you got you wanted ...')
-
-	print('\nDone \nThank you for using me ...')
-#main
