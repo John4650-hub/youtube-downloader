@@ -16,8 +16,8 @@ def video_quality(video_object):
 
 running = True
 while running:
-	url = (input('\n\t Paste url here: '))
-	m = input('\n\tEnter pl for playlist or leave blank: ')
+	url = (input('\nPaste url here: '))
+	m = input('\nEnter pl for playlist or leave blank: ')
 	
 	
 	if url == 'done' and m == '':
@@ -28,11 +28,11 @@ while running:
 			yt = YouTube(url)
 			vt = yt.title
 			print(f'Video title: {vt}')
-			print('\n\tAvailable video qualities')
+			print('\nAvailable video qualities')
 			video_quality(yt)
 				
 			audio_qualities = yt.streams.filter(only_audio = True)
-			print('\n\tAvailable audio qualities')
+			print('\nAvailable audio qualities')
 			
 			for aud in audio_qualities:
 				m = str(aud).split(' ')
@@ -49,7 +49,7 @@ while running:
 	# playlist
 		if m == 'pl':
 			p = Playlist(url)
-			interactive = input("""\n\tEnter 'i' to prompt interactive mode or 
+			interactive = input("""\nEnter 'i' to prompt interactive mode or 
 	'n' for none-interactive-mode: """)
 			
 			if interactive == 'i':
