@@ -67,8 +67,11 @@ while running:
 			else:
 			    for v in p.videos:
 			        print(f'downloading: {v.title}')
-			        print(v.streams.first().download(),' /done')		    
+			        print(v.streams.first().download(),'done')		    
 				
 else:
+
 	print('\nDone \nThank you for using my program.\nHope you got you wanted ...')
-	
+
+	print('\nDone \nThank you for using me ...')
+#main
