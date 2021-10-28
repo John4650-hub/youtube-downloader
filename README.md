@@ -28,7 +28,7 @@
     <li>url<sup>*</sup></li>
     <dt>Paste the playlist url and press enter</dt><br />
     <li>Optional Entry<sup>*</sup></li>
-    <dt>Enter 'pl' and press enter.</dt><br />
+    <dt>Enter 'pl' lower-case and press enter.</dt><br />
     <li>3<sup>rd</sup> Entry<sup>*</sup></li>
     <dt>Enter 'i' to enter interactive mode or 'n' to download straight-away</dt><br />
     <li>In-interractive-mode<sup>*</sup></li>
