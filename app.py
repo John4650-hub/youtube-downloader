@@ -16,8 +16,8 @@ def video_quality(video_object):
 
 running = True
 while running:
-	url = (input('\n\t url: '))
-	m = input('\n\ttype playlist if it is or leave blank: ')
+	url = (input('\n\t Paste url here: '))
+	m = input('\n\tEnter pl for playlist or leave blank: ')
 	
 	
 	if url == 'done' and m == '':
