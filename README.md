@@ -2,7 +2,7 @@
 <p>This is a simple youtube video downloader program written in python </p>
 <h3>Content</h3>
 <ul>
-    <li><a href="#video">About downloading videos and audios</a></li><br />
+    <li><a href="#video">About downloading videos and audios</a></li>
     <li><a href="#playlist">About downloading playlists</a></li>
     <li><a href="#exit">#How to stop the program.</a></li>
 </ul>
