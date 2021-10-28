@@ -1,6 +1,8 @@
 <h2 style="font-family: Times New Roman; color:red;">YouTube Video Downloader</h2><hr />
 <p>This is a simple youtube video downloader program written in python </p>
-<p>You will need to install Pytube</p>
+
+You will need to install **Pytube**
+`pip install pytube`
 <h3>Content</h3>
 <ul>
     <li><a href="#video">About downloading videos and audios</a></li>
