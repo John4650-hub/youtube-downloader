@@ -2,7 +2,7 @@ import pytube
 from pytube import YouTube,Playlist
 
 
-print("Type in 'done' without quotes to humbly end this program. ")
+print("Read the readme at github")
 
 def video_quality(video_object):
 	video_qualities = video_object.streams.filter(progressive= True)
