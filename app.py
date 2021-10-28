@@ -47,8 +47,6 @@ while running:
 			print(f'Video saved in {stm.download()}\nDone.\n\n')
 		
 	# playlist
-	# https://youtube.com/playlist?list=PL8JRTKSSfvuooZXI4TE_9qB01Ua-BdY_k
-		
 		if m == 'pl':
 			p = Playlist(url)
 			interactive = input("""\n\tEnter 'i' to prompt interactive mode or 
@@ -60,7 +58,6 @@ while running:
     				video_quality(v)
     				choice = input('choose prefered itag or just type skip to skip to next: ')
     
-    # if you want to skip a video
     				if choice == 'skip':
     				    continue
     				else:
@@ -73,5 +70,5 @@ while running:
 			        print(v.streams.first().download(),' /done')		    
 				
 else:
-	print('\nDone \nThank you for using me ...')
+	print('\nDone \nThank you for using my program.\nHope you got you wanted ...')
 	
