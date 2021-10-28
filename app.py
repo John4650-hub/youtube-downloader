@@ -2,7 +2,7 @@ import pytube
 from pytube import YouTube,Playlist
 
 
-print("Type in 'done' without quotes to humbly end this program. ")
+print("Read the readme at github")
 
 def video_quality(video_object):
 	video_qualities = video_object.streams.filter(progressive= True)
@@ -16,8 +16,8 @@ def video_quality(video_object):
 
 running = True
 while running:
-	url = (input('\n\t url: '))
-	m = input('\n\ttype playlist if it is or leave blank: ')
+	url = (input('\n\t Paste url here: '))
+	m = input('\n\tEnter pl for playlist or leave blank: ')
 	
 	
 	if url == 'done' and m == '':
@@ -47,8 +47,6 @@ while running:
 			print(f'Video saved in {stm.download()}\nDone.\n\n')
 		
 	# playlist
-	# https://youtube.com/playlist?list=PL8JRTKSSfvuooZXI4TE_9qB01Ua-BdY_k
-		
 		if m == 'pl':
 			p = Playlist(url)
 			interactive = input("""\n\tEnter 'i' to prompt interactive mode or 
@@ -60,7 +58,6 @@ while running:
     				video_quality(v)
     				choice = input('choose prefered itag or just type skip to skip to next: ')
     
-    # if you want to skip a video
     				if choice == 'skip':
     				    continue
     				else:
@@ -73,5 +70,8 @@ while running:
 			        print(v.streams.first().download(),'done')		    
 				
 else:
+
+	print('\nDone \nThank you for using my program.\nHope you got you wanted ...')
+
 	print('\nDone \nThank you for using me ...')
-# 	
+#main
