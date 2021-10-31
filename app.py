@@ -2,7 +2,7 @@ import pytube
 from pytube import YouTube,Playlist
 
 
-print("Read the readme at github")
+print("Read the readme.md of this program before use at github")
 
 def video_quality(video_object):
 	video_qualities = video_object.streams.filter(progressive= True)
@@ -16,8 +16,8 @@ def video_quality(video_object):
 
 running = True
 while running:
-	url = (input('\n\t Paste url here: '))
-	m = input('\n\tEnter pl for playlist or leave blank: ')
+	url = (input('\nPaste url here: '))
+	m = input('\nEnter pl for playlist or leave blank: ')
 	
 	
 	if url == 'done' and m == '':
@@ -28,11 +28,11 @@ while running:
 			yt = YouTube(url)
 			vt = yt.title
 			print(f'Video title: {vt}')
-			print('\n\tAvailable video qualities')
+			print('\nAvailable video qualities')
 			video_quality(yt)
 				
 			audio_qualities = yt.streams.filter(only_audio = True)
-			print('\n\tAvailable audio qualities')
+			print('\nAvailable audio qualities')
 			
 			for aud in audio_qualities:
 				m = str(aud).split(' ')
@@ -49,19 +49,25 @@ while running:
 	# playlist
 		if m == 'pl':
 			p = Playlist(url)
-			interactive = input("""\n\tEnter 'i' to prompt interactive mode or 
-	'n' for none-interactive-mode: """)
+			interactive = input("\nEnter 'i' to prompt interactive mode or 'n' for none-interactive-mode: ")
 			
 			if interactive == 'i':
 			    for v in p.videos:
-    				print('\n',v.title)
+    				print(f'\nTitle: {v.title}')
+    				print(f'Choose Video Quality')
     				video_quality(v)
     				choice = input('choose prefered itag or just type skip to skip to next: ')
     
+    				if choice == 'done':
+    				    print('\nYou are done with playlists, redirecting you back to home.')
+    				    break
+    				    
     				if choice == 'skip':
+    				    print('skipping Video')
     				    continue
     				else:
     					stm = v.streams.get_by_itag(int(choice))
+    					print('Download in progress...')
     					print(f'Video saved in {stm.download()}\nDone.\n')
     					
 			else:
@@ -70,8 +76,4 @@ while running:
 			        print(v.streams.first().download(),'done')		    
 				
 else:
-
 	print('\nDone \nThank you for using my program.\nHope you got you wanted ...')
-
-	print('\nDone \nThank you for using me ...')
-#main
