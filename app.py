@@ -49,16 +49,19 @@ while running:
 	# playlist
 		if m == 'pl':
 			p = Playlist(url)
-			interactive = input("""\nEnter 'i' to prompt interactive mode or 
-	'n' for none-interactive-mode: """)
+			interactive = input("\nEnter 'i' to prompt interactive mode or 'n' for none-interactive-mode: ")
 			
 			if interactive == 'i':
 			    for v in p.videos:
-    				print(f'\n,Title: {v.title}')
+    				print(f'\nTitle: {v.title}')
     				print(f'Choose Video Quality')
     				video_quality(v)
     				choice = input('choose prefered itag or just type skip to skip to next: ')
     
+    				if choice == 'done':
+    				    print('You are done with playlists, redirecting you back to home.')
+    				    break
+    				    
     				if choice == 'skip':
     				    print('skipping Video')
     				    continue
