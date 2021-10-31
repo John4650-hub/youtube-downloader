@@ -38,6 +38,7 @@ You will need to install **Pytube**
     <dt>You will be required to select an itag for every single video in the playlist or 'skip' to skip the ones you don't want.</dt>
 </ul>
 #terminal sample
+
 >Type in 'done' without quotes to humbly end this program.
 
 >url: https://youtube.com/playlist?list=PLumYWZ2t7CRvdJJ206QarbisxYPAyYwj0
