@@ -74,8 +74,11 @@ You will need to install **Pytube**
 >Title :How to Really Make a Phaser Game from Scratch! Part 3 - UNCUT
 
 >choose video quality
+
   >>itag="17" ==> size: 4.83mb
+  
   >>itag="18" ==> size: 21.49mb
+  
   >>itag="22" ==> size: 42.72mb
   
 >choose prefered itag or just type skip to skip to next: 18
