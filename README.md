@@ -50,9 +50,13 @@ You will need to install **Pytube**
 >Title :How to Really Make a Phaser Game from Scratch! Part 1 - UNCUT
 
 >choose video quality
+
   >>itag="17" ==> size: 8.71mb
+  
   >>itag="18" ==> size: 35.78mb
+  
   >>itag="22" ==> size: 75.93mb
+  
 >choose prefered itag or just type skip to skip to next: skip
 >>Skipping video
 
@@ -60,7 +64,9 @@ You will need to install **Pytube**
 
 >choose video quality
   >>itag="17" ==> size: 3.06mb
+  
   >>itag="18" ==> size: 13.07mb
+  
   >>itag="22" ==> size: 29.52mb
 >choose prefered itag or just type skip to skip to next: skip
 >>Skipping video
@@ -71,8 +77,11 @@ You will need to install **Pytube**
   >>itag="17" ==> size: 4.83mb
   >>itag="18" ==> size: 21.49mb
   >>itag="22" ==> size: 42.72mb
+  
 >choose prefered itag or just type skip to skip to next: 18
->Download in progress
+
+>Download in progress...
+
 <p>lt will take some time depending on the size of the videos and speed of your network.</p>
 <h6 id="exit">Closing / Exiting</h6>
 After you have finished downloading whatever you wanted to, in the Entry for 'url' enter done and for the next entry leave blank
