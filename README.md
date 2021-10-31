@@ -68,6 +68,7 @@ You will need to install **Pytube**
   >>itag="18" ==> size: 13.07mb
   
   >>itag="22" ==> size: 29.52mb
+  
 >choose prefered itag or just type skip to skip to next: skip
 >>Skipping video
 
