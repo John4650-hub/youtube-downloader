@@ -54,14 +54,17 @@ while running:
 			
 			if interactive == 'i':
 			    for v in p.videos:
-    				print('\n',v.title)
+    				print(f'\n,Title: {v.title}')
+    				print(f'Choose Video Quality')
     				video_quality(v)
     				choice = input('choose prefered itag or just type skip to skip to next: ')
     
     				if choice == 'skip':
+    				    print('skipping Video')
     				    continue
     				else:
     					stm = v.streams.get_by_itag(int(choice))
+    					print('Download in progress...')
     					print(f'Video saved in {stm.download()}\nDone.\n')
     					
 			else:
