@@ -41,7 +41,7 @@ You will need to install **Pytube**
 
 >Type in 'done' without quotes to humbly end this program.
 
->url: 'https://youtube.com/playlist?list=PLumYWZ2t7CRvdJJ206QarbisxYPAyYwj0'
+>url: https://youtube.com/playlist?list=PLumYWZ2t7CRvdJJ206QarbisxYPAyYwj0
 
 >type playlist if it is or leave blank: pl
 
