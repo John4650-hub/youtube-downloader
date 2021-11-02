@@ -2,7 +2,8 @@ import pytube
 from pytube import YouTube,Playlist
 
 
-print("Read the readme.md of this program before use at github")
+print("Read the readme at github")
+
 
 def video_quality(video_object):
 	video_qualities = video_object.streams.filter(progressive= True)
@@ -14,8 +15,19 @@ def video_quality(video_object):
 		print(f'  {y} ==> size: {(vs)}mb')
 
 
+def totalsize(pl):
+	total_size = 0
+	for v in pl:
+		filt= v.streams.get_by_itag('18')
+		sizev = filt.filesize * (9.5367431640625*10**-7)
+		vs = round(sizev,2)
+		total_size += vs
+	return str(total_size)+'mbs'
+	
+
 running = True
 while running:
+	print('You are home')
 	url = (input('\nPaste url here: '))
 	m = input('\nEnter pl for playlist or leave blank: ')
 	
@@ -50,7 +62,10 @@ while running:
 		if m == 'pl':
 			p = Playlist(url)
 			interactive = input("\nEnter 'i' to prompt interactive mode or 'n' for none-interactive-mode: ")
-			
+			count = len(p.videos)
+			print(f'This playlist contains {count} videos')
+			print('wait, calculating total size of this playlist')
+			print(f'Playlist total size: {totalsize(p.videos)}')		
 			if interactive == 'i':
 			    for v in p.videos:
     				print(f'\nTitle: {v.title}')
@@ -59,7 +74,7 @@ while running:
     				choice = input('choose prefered itag or just type skip to skip to next: ')
     
     				if choice == 'done':
-    				    print('\nYou are done with playlists, redirecting you back to home.')
+    				    print('You are done with playlists, redirecting you back to home.')
     				    break
     				    
     				if choice == 'skip':
