@@ -27,7 +27,10 @@ def totalsize(pl):
 
 running = True
 while running:
+
 	print('You are home')
+
+  
 	url = (input('\nPaste url here: '))
 	m = input('\nEnter pl for playlist or leave blank: ')
 	
@@ -62,10 +65,14 @@ while running:
 		if m == 'pl':
 			p = Playlist(url)
 			interactive = input("\nEnter 'i' to prompt interactive mode or 'n' for none-interactive-mode: ")
+
 			count = len(p.videos)
 			print(f'This playlist contains {count} videos')
 			print('wait, calculating total size of this playlist')
 			print(f'Playlist total size: {totalsize(p.videos)}')		
+
+			
+
 			if interactive == 'i':
 			    for v in p.videos:
     				print(f'\nTitle: {v.title}')
