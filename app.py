@@ -13,16 +13,6 @@ def video_quality(video_object):
 		sizev = v.filesize * (9.5367431640625*10**-7)
 		vs = round(sizev,2)
 		print(f'  {y} ==> size: {(vs)}mb')
-
-
-def totalsize(pl):
-	total_size = 0
-	for v in pl:
-		filt= v.streams.get_by_itag('18')
-		sizev = filt.filesize * (9.5367431640625*10**-7)
-		vs = round(sizev,2)
-		total_size += vs
-	return str(total_size)+'mbs'
 	
 
 running = True
@@ -69,9 +59,7 @@ while running:
 			count = len(p.videos)
 			print(f'This playlist contains {count} videos')
 			print('wait, calculating total size of this playlist')
-			print(f'Playlist total size: {totalsize(p.videos)}')		
-
-			
+						
 
 			if interactive == 'i':
 			    for v in p.videos:
