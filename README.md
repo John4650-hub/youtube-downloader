@@ -40,7 +40,7 @@ pip install pytube
     <dt>You will be required to select an itag for every single video in the playlist or 'skip' to skip the ones you don't want.</dt>
 </ul>
 #terminal sample
-
+```bash
 >Type in 'done' without quotes to humbly end this program.
 
 >url: https://youtube.com/playlist?list=PLumYWZ2t7CRvdJJ206QarbisxYPAyYwj0
@@ -87,6 +87,7 @@ pip install pytube
 >choose prefered itag or just type skip to skip to next: 18
 
 >Download in progress...
+```
 
 <p>lt will take some time depending on the size of the videos and speed of your network.</p>
 <h6 id="exit">Closing / Exiting</h6>
