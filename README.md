@@ -2,8 +2,8 @@
 <p>This is a simple youtube video downloader program written in python </p>
 
 You will need to install **Pytube**
-```python
-pip install pytube
+```bash
+$ pip install pytube
 ```
 <h3>Content</h3>
 <ul>
