@@ -41,15 +41,15 @@ pip install pytube
 </ul>
 #terminal sample
 ```bash
->Type in 'done' without quotes to humbly end this program.
+Type in 'done' without quotes to humbly end this program.
 
->url: https://youtube.com/playlist?list=PLumYWZ2t7CRvdJJ206QarbisxYPAyYwj0
+url: https://youtube.com/playlist?list=PLumYWZ2t7CRvdJJ206QarbisxYPAyYwj0
 
->type playlist if it is or leave blank: pl
+type playlist if it is or leave blank: pl
 
->Enter 'i' to prompt interactive mode or 'n' for none-interactive-mode: i
+Enter 'i' to prompt interactive mode or 'n' for none-interactive-mode: i
 
->Title :How to Really Make a Phaser Game from Scratch! Part 1 - UNCUT
+Title :How to Really Make a Phaser Game from Scratch! Part 1 - UNCUT
 
 >choose video quality
 
