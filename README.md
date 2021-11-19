@@ -2,7 +2,9 @@
 <p>This is a simple youtube video downloader program written in python </p>
 
 You will need to install **Pytube**
-`pip install pytube`
+```python
+pip install pytube
+```
 <h3>Content</h3>
 <ul>
     <li><a href="#video">About downloading videos and audios</a></li>
