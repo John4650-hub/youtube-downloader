@@ -37,7 +37,7 @@ You will need to install **Pytube**
     <li>In-interractive-mode<sup>*</sup></li>
     <dt>You will be required to select an itag for every single video in the playlist or 'skip' to skip the ones you don't want.</dt>
 </ul>
-``` terminal 
+#terminal sample
 
 >Type in 'done' without quotes to humbly end this program.
 
@@ -85,7 +85,6 @@ You will need to install **Pytube**
 >choose prefered itag or just type skip to skip to next: 18
 
 >Download in progress...
-```
 
 <p>lt will take some time depending on the size of the videos and speed of your network.</p>
 <h6 id="exit">Closing / Exiting</h6>
