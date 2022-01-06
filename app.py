@@ -70,7 +70,8 @@ else:
 		except:
 			print('''
 ⚠ please check if you entered the correct link,
-⚠ Also check if you have internet connection on.''')					
+⚠ Also check if you have internet connection on.''')
+
 	else:
 		print('\nDone \nThank you for using my program.\nHope you got you wanted ...')
 		
