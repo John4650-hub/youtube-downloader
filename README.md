@@ -54,11 +54,11 @@ Title :How to Really Make a Phaser Game from Scratch! Part 1 - UNCUT
 
 choose video quality
 
-  itag="17" ==> size: 8.71mb
+  itag="17" ⇒ size: 8.71mb
   
-  itag="18" ==> size: 35.78mb
+  itag="18" ⇒ size: 35.78mb
   
-  itag="22" ==> size: 75.93mb
+  itag="22" ⇒ size: 75.93mb
   
 choose prefered itag or just type skip to skip to next: skip
 Skipping video
@@ -66,11 +66,11 @@ Skipping video
 Title :How to Really Make a Phaser Game from Scratch! Part 2 - UNCUT
 
 choose video quality
-  itag="17" ==> size: 3.06mb
+  itag="17" ⇒ size: 3.06mb
   
-  itag="18" ==> size: 13.07mb
+  itag="18" ⇒ size: 13.07mb
   
-  itag="22" ==> size: 29.52mb
+  itag="22" ⇒ size: 29.52mb
   
 choose prefered itag or just type skip to skip to next: skip
 Skipping video
@@ -79,11 +79,11 @@ Title :How to Really Make a Phaser Game from Scratch! Part 3 - UNCUT
 
 choose video quality
 
-  itag="17" ==> size: 4.83mb
+  itag="17" ⇒ size: 4.83mb
   
-  itag="18" ==> size: 21.49mb
+  itag="18" ⇒ size: 21.49mb
   
-  itag="22" ==> size: 42.72mb
+  itag="22" ⇒ size: 42.72mb
   
 choose prefered itag or just type skip to skip to next: 18
 
