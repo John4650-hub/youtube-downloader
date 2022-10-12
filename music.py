@@ -14,7 +14,7 @@ else:
 		print('\nYou are home 🏠')
 		myUrls = 'music.txt'
 		with open(myUrls,"r") as dataUrl:
-		  urls = dataUrl.split('\n')
+		  urls = dataUrl.read().split('\n')
 		try:
 		  for link in urls:
   			url = link.strip()
