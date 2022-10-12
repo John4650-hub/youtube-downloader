@@ -1,23 +1,21 @@
-name: CI
+name: Build youtube video downloader
 on:
   push:
-    branches: [ "main" ]
-
+    branches: main
 jobs:
-  build:
+  Mywork-flow:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - run: pip install pytube
-      - run: python music.py
-      - run: ls
-      - run: mkdir myMusic/
-      - run: mv -rf *.mp3 myMusic
-      
-      - uses: actions/upload-artifact@v3
-      - with:
-          name: my-artifact
-          path: myMusic/
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: chmod +x YoutubeVideoDownloader.sh
+    - run: ./YoutubeVideoDownloader.sh
+    
+    - name: Upload_audio_artifact
+      uses: actions/upload-artifact@v3
+      with:
+        path: ./myMusic
+        retention-days: 1
+        
