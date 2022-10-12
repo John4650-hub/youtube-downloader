@@ -14,10 +14,10 @@ else:
 		print('\nYou are home 🏠')
 		myUrls = 'music.txt'
 		with open(myUrls,"r") as dataUrl:
-		  urls = dataUrl.strip().split('\n')
+		  urls = dataUrl.split('\n')
 		try:
 		  for link in urls:
-  			url = link
+  			url = link.strip()
   			m = ''
 		
 		
