@@ -35,7 +35,7 @@ else:
   					audio_qualities = yt.streams.filter(only_audio = True)
   					print('\nAvailable audio qualities')
   					audio_quality(audio_qualities)
-  					choice = 140
+  					choice = 18
   					stm = yt.streams.get_by_itag(choice)
   					
   					print(f'Video saved in {stm.download()}\nDone.\n\n')
