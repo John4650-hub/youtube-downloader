@@ -2,4 +2,4 @@ mkdir myMusic/
 pip install pytube
 ls
 python music.py
-mv -f *.webm myMusic/
+mv -f *.3gpp myMusic/
