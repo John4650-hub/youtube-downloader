@@ -35,7 +35,7 @@ else:
   					audio_qualities = yt.streams.filter(only_audio = True)
   					print('\nAvailable audio qualities')
   					audio_quality(audio_qualities)
-  					choice = 249 #audio
+  					choice = 140 #audio
   					#choice = 250 #webm
   					#choice = 18 #video
   					#choice = 22 #best quality video
