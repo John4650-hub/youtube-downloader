@@ -1,5 +1,5 @@
 mkdir myMusic/
 pip install pytube
 ls
-python music.py
-mv -f *.webm myMusic/
+# python music.py
+# mv -f *.mp4 myMusic/
