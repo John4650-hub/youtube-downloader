@@ -36,8 +36,9 @@ else:
   					print('\nAvailable audio qualities')
   					audio_quality(audio_qualities)
   					#choice = 249 #audio
-  					#choice = 250 #webm
-  					choice = 18 #video
+                                        choice = 17 #.webm
+  					#choice = 250 #mp3
+  					#choice = 18 #video
   					#choice = 22 #best quality video
   					stm = yt.streams.get_by_itag(choice)
   					
