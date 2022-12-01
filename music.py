@@ -18,7 +18,7 @@ else:
 		try:
 		  for link in urls:
   			url = link.strip()
-  			m = 'pl'
+  			m = ''
 		
 		
   			if url == 'done' and m == '':

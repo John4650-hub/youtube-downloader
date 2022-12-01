@@ -1,3 +1,3 @@
 git add .
-git commit -m "pixel art tutorial 101"
+git commit -m "videos"
 git push
