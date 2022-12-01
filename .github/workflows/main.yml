@@ -17,5 +17,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         path: ./myMusic
-        retention-days: 1
+        retention-days: 10
         
