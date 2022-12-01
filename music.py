@@ -38,7 +38,7 @@ else:
   					#choice = 249 #audio
   					#choice = 250 #mp3
   					#choice = 17 #video3gpp
-                                        choice = 18 #video mp4
+  					choice = 18 #video mp4
   					#choice = 22 #best quality video
   					stm = yt.streams.get_by_itag(choice)
   					
