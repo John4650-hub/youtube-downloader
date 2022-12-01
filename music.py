@@ -56,7 +56,7 @@ else:
   					    for v in p.videos:
   		    				print(f'\nTitle: {v.title}')
   		    				print(f'Choose Video Quality')
-                  video_quality(v)
+  		    				video_quality(v)
   		    				choice = input('choose prefered itag or just type skip to skip to next: ')
   		    
   		    				if choice == 'done':
