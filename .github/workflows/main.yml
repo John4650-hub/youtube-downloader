@@ -45,6 +45,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path: ./myMusic.zip
+           asset_path: Upload_audio/myMusic.zip
            asset_name: vids.zip
            asset_content_type: application/zip
