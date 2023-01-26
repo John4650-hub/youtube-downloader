@@ -13,9 +13,9 @@ jobs:
     - run: chmod +x YoutubeVideoDownloader.sh
     - run: ./YoutubeVideoDownloader.sh
     
-    - name: Upload_audio
       uses: actions/upload-artifact@v3
       with:
+        name: Upload_audio
         path: ./myMusic.zip
         retention-days: 10
   release:
