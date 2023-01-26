@@ -13,7 +13,7 @@ jobs:
     - run: chmod +x YoutubeVideoDownloader.sh
     - run: ./YoutubeVideoDownloader.sh
     
-      uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
         path: ./myMusic.zip
