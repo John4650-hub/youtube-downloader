@@ -10,7 +10,7 @@ else:
     from utils import *
 
     print("Read the readme at github", end="")
-    # hbbttps://youtu.be/tPEE9ZwTmy0
+    # https://youtu.be/tPEE9ZwTmy0
     running = True
     while running:
         print("\nYou are home 🏠")
