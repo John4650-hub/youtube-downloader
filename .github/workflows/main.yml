@@ -3,7 +3,7 @@ on:
   push:
     branches: main
 jobs:
-  Mywork-flow:
+  Download-vid:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -13,9 +13,37 @@ jobs:
     - run: chmod +x YoutubeVideoDownloader.sh
     - run: ./YoutubeVideoDownloader.sh
     
-    - name: Upload_audio_artifact
+    - name: Upload_audio
       uses: actions/upload-artifact@v3
       with:
-        path: ./myMusic
+        path: ./myMusic.zip
         retention-days: 10
-        
+  release:
+     name: Release apk
+     needs: Download-vid
+     runs-on: ubuntu-latest
+     steps:
+       - name: Download apk from build
+         uses: actions/download-artifact@v1
+         with:
+           name: upload_audio
+
+       - name: Create Release
+         id: create_release
+         uses: actions/create-release@v1
+         env:
+           GITHUB_TOKEN: ${{ secrets.TK }}
+         with:
+           tag_name: ${{ github.run_number }}
+           release_name: ${{ github.event.repository.name }} v4.0.6
+
+       - name: upload Release Apk
+         id: upload_release_assets
+         uses: actions/upload-release-asset@v1.0.1
+         env:
+            GITHUB_TOKEN: ${{ secrets.TK }}
+         with:
+           upload_url: ${{ steps.create_release.outputs.upload_url }}
+           asset_path: ./myMusic.zip
+           asset_name: vids.zip
+           asset_content_type: application/zip
