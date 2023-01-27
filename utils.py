@@ -1,3 +1,18 @@
+import argparse
+
+def getArgs():
+    parser = argparse.ArgumentParser(prog="app.py",description = "Download youtube videos easily")
+    parser.add_argument('url',metavar='videoUrl',help="Paste url of youtube video",default='')
+    parser.add_argument('-m','--mode',metavar='mode',help='''
+    mode can either be pl->playlist 
+    or left empty->normal video''',default='')
+    parser.add_argument('-i','--itag',metavar='itag',type=int,help='''
+    itag can only be number like
+    17, 18, 22, ...Read the readme 
+    for supported itags ''',defaut=18)
+    
+    return parser.parse_args()
+
 def video_quality(video_object):
 	video_qualities = video_object.streams.filter(progressive= True)
 	for v in video_qualities:
