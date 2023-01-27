@@ -2,14 +2,14 @@ import argparse
 
 def getArgs():
     parser = argparse.ArgumentParser(prog="app.py",description = "Download youtube videos easily")
-    parser.add_argument('url',metavar='videoUrl',help="Paste url of youtube video",default='')
+    parser.add_argument('url',metavar='videoUrl',help="Paste url of youtube video",default='done')
     parser.add_argument('-m','--mode',metavar='mode',help='''
     mode can either be pl->playlist 
     or left empty->normal video''',default='')
     parser.add_argument('-i','--itag',metavar='itag',type=int,help='''
     itag can only be number like
     17, 18, 22, ...Read the readme 
-    for supported itags ''',defaut=18)
+    for supported itags ''',default=18)
     
     return parser.parse_args()
 
