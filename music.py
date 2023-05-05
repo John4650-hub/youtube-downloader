@@ -78,8 +78,7 @@ else:
 
                         else:
                             for v in p.videos:
-                                print(f"{v}")
-                                print(v.streams.get_by_itag(18).download(), "done")
+                                v.streams.get_by_itag(18).download()
         except Exception as e:
             print(
                     "Exception occured: {}".format(e)
