@@ -78,7 +78,8 @@ else:
 
                         else:
                             for v in p.videos:
-                                v.streams.get_by_itag(18).download()
+                                m=v.streams.get_by_itag(18)
+                                m.download()
         except Exception as e:
             print(
                     "Exception occured: {}".format(e)
