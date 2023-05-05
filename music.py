@@ -79,7 +79,7 @@ else:
                         else:
                             for v in p.videos:
                                 print(f"downloading: {v.title}")
-                                print(v.streams.first().download(), "done")
+                                print(v.streams.get_by_itag(18).download(), "done")
         except:
             print(
                 """
