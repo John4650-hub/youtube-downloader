@@ -78,7 +78,7 @@ else:
 
                         else:
                             for v in p.videos:
-                                print(f"downloading: {v.title}")
+                                print(f"{v}")
                                 print(v.streams.get_by_itag(18).download(), "done")
         except Exception as e:
             print(
