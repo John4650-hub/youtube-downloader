@@ -80,11 +80,9 @@ else:
                             for v in p.videos:
                                 print(f"downloading: {v.title}")
                                 print(v.streams.get_by_itag(18).download(), "done")
-        except:
+        except Exception as e:
             print(
-                """
-⚠ please check if you entered the correct link,
-⚠ Also check if you have internet connection on."""
+                    "Exception occured: {}".format(e)
             )
 
     else:
