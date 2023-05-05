@@ -1,5 +1,7 @@
 mkdir myMusic/
-pip install pytube
+git clone https://github.com/John4650-hub/pytube.git
+cd pytube
+pip install .
 ls
 python music.py
 mv -f *.mp4 myMusic/
