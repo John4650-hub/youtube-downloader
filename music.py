@@ -20,7 +20,7 @@ else:
         try:
             for link in urls:
                 url = link.strip()
-                m = ""
+                m = "pl"
 
                 if url == "done" and m == "":
                     running = False
