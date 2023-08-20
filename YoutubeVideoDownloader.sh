@@ -9,13 +9,13 @@ url=https://youtu.be/tPEE9ZwTmy0
 
 echo "vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)" >> $GITHUB_ENV
 cd ..
-mv myMusic $vidName
+mv myMusic "$vidName"
 ls
 echo /////////////
-echo $vidName
+echo "$vidName"
 echo /////////////
 
 
 #youtube-dl -f 18 --playlist-items 0-33 https://youtube.com/playlist?list=PLK3Jf2YakZU98E_ia8q2n2-XXpf8vH98W 
 #youtube-dl -f 18 https://youtu.be/A1UDtFqDL48 
-zip -r ${vidName}.zip $vidName/
+zip -r "$vidName".zip "$vidName"/
