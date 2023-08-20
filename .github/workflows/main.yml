@@ -46,7 +46,7 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            tag_name: ${{ github.run_number }}
-           release_name: ${{ github.event.repository.name }} v4.0.6
+           release_name: ${{ needs.Download-vid.outputs.vidTitle }}
 
        - name: upload Release Apk
          id: upload_release_assets
