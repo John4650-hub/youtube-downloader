@@ -5,8 +5,9 @@ cd myMusic
 echo /////////////
 echo $vidName
 echo /////////////
+url=https://youtu.be/tPEE9ZwTmy0
 
-vidName=youtube-dl --get-title -f 18 https://youtu.be/tPEE9ZwTmy0
+export vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)
 echo /////////////
 echo $vidName
 echo /////////////
