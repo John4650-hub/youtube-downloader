@@ -54,6 +54,7 @@ jobs:
          env:
             GITHUB_TOKEN: ${{ secrets.TK }}
             vidName: ${{ needs.Download-vid.outputs.vidTitle }}
+         run: echo $vidName ${vidName}
 
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
