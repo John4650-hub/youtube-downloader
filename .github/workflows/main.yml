@@ -14,7 +14,7 @@ jobs:
        export vidName=5
        chmod +x YoutubeVideoDownloader.sh
     - run: ./YoutubeVideoDownloader.sh
-    
+    - run: echo $vidName
     - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
