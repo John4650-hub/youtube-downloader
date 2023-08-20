@@ -3,11 +3,11 @@ mkdir myMusic/
 pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
 cd myMusic
 echo /////////////
-echo ${vidName }
+echo $vidName
 echo /////////////
 url=https://youtu.be/tPEE9ZwTmy0
 
-export vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)
+echo "vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)" >> $GITHUB_ENV
 echo /////////////
 echo $vidName
 echo /////////////
