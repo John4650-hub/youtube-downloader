@@ -14,7 +14,9 @@ jobs:
         python-version: '3.10'
     - run: chmod +x YoutubeVideoDownloader.sh
     - run: ./YoutubeVideoDownloader.sh
-    - run: echo $vidName
+    - run: |
+       echo $vidName
+       ls
     - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
