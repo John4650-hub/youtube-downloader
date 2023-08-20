@@ -6,7 +6,7 @@ jobs:
   Download-vid:
     runs-on: ubuntu-latest
     outputs:
-      vidTitle: ${{ steps.set_var.outputs.vidTitle }}
+      vidTitle: ${{ steps.set_var.outputs.txt }}
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
@@ -17,8 +17,7 @@ jobs:
     - name:
       id: set_var
       run: |
-        echo "vidTitle=$vidName" >> $GITHUB_OUTPUT
-        echo $vidTitle
+        echo "txt=$vidName" >> $GITHUB_OUTPUT
 
 
     - run: |
@@ -36,15 +35,12 @@ jobs:
      needs: Download-vid
      runs-on: ubuntu-latest
      steps:
+       - env:
+          vidName: ${{ needs.Download-vid.outputs.vidTitle }}
        - name: Download apk from build
          uses: actions/download-artifact@v1
          with:
            name: Upload_audio
-
-       - run: |
-          echo "vidTitle=${{ needs.Download-vid.outputs.vidTitle }}"
-          echo $vidTitle
-
        - name: Create Release
          id: create_release
          uses: actions/create-release@v1
@@ -61,6 +57,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path: Upload_audio/${vidTitle}.zip
-           asset_name: ${vidTitle}.zip
+           asset_path: Upload_audio/${vidName}.zip
+           asset_name: ${vidName}.zip
            asset_content_type: application/zip
