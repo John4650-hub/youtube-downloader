@@ -7,9 +7,7 @@ echo $vidName
 echo /////////////
 url=https://youtu.be/tPEE9ZwTmy0
 
-echo vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)
-cd ..
-mv myMusic "$vidName"
+echo "vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)" >> $GITHUB_ENV $$ cd .. $$ mv myMusic "$vidName"
 ls
 echo /////////////
 echo "$vidName"
