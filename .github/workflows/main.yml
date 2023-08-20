@@ -1,6 +1,6 @@
 name: Build youtube video downloader
 env:
-  vidName: ""
+   vidName: "hello"
 on:
   push:
     branches: dl
