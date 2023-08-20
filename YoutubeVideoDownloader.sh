@@ -6,7 +6,7 @@ echo /////////////
 echo $vidName
 echo /////////////
 
-vidName=youtube-dl --get-filename -f 18 https://youtu.be/tPEE9ZwTmy0
+vidName= $(youtube-dl --get-title -f 18 https://youtu.be/tPEE9ZwTmy0)
 echo /////////////
 echo $vidName
 echo /////////////
