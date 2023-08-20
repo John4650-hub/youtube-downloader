@@ -23,7 +23,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
-        path: ./$vidName.zip
+        path: ./${{env.vidName}}.zip
         retention-days: 10
   release:
      name: Release apk
@@ -52,6 +52,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path: Upload_audio/$vidName.zip
-           asset_name: $vidName.zip
+           asset_path: Upload_audio/${{env.vidName}}.zip
+           asset_name: ${{env.vidName}}.zip
            asset_content_type: application/zip
