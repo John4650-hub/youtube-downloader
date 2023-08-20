@@ -3,7 +3,7 @@ mkdir myMusic/
 pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
 cd myMusic
 echo /////////////
-echo $vidName
+echo ${{ env.vidName }}
 echo /////////////
 url=https://youtu.be/tPEE9ZwTmy0
 
