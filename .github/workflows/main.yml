@@ -18,7 +18,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
-        path: ${{ vidName }}.zip
+        path: ./${{ vidName }}.zip
         retention-days: 10
   release:
      name: Release apk
