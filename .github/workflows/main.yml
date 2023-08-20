@@ -11,7 +11,7 @@ jobs:
       with:
         python-version: '3.10'
     - run: |
-       export vidName=5
+        vidName=5 >> $GITHUB_ENV
        chmod +x YoutubeVideoDownloader.sh
     - run: ./YoutubeVideoDownloader.sh
     - run: echo $vidName
