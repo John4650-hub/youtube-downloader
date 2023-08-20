@@ -16,10 +16,10 @@ jobs:
     - run: ./YoutubeVideoDownloader.sh
     - run: |
        echo $vidName
-       ls
        mv myMusic "$vidName"
        ls
        zip -r "$vidName".zip "$vidName"/
+       ls
     - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
