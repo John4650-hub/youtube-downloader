@@ -17,6 +17,9 @@ jobs:
     - run: |
        echo $vidName
        ls
+       mv myMusic "$vidName"
+       ls
+       zip -r "$vidName".zip "$vidName"/
     - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
