@@ -35,8 +35,6 @@ jobs:
      needs: Download-vid
      runs-on: ubuntu-latest
      steps:
-       - env:
-          vidName: ${{ needs.Download-vid.outputs.vidTitle }}
        - name: Download apk from build
          uses: actions/download-artifact@v1
          with:
@@ -55,6 +53,8 @@ jobs:
          uses: actions/upload-release-asset@v1.0.1
          env:
             GITHUB_TOKEN: ${{ secrets.TK }}
+            vidName: ${{ needs.Download-vid.outputs.vidTitle }}
+
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
            asset_path: Upload_audio/${vidName}.zip
