@@ -7,7 +7,7 @@ echo ${{ env.vidName }}
 echo /////////////
 url=https://youtu.be/tPEE9ZwTmy0
 
-vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)
+export vidName=$(youtube-dl -f mp4 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)
 echo /////////////
 echo $vidName
 echo /////////////
