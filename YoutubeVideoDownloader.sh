@@ -10,7 +10,6 @@ echo "vidName=$(youtube-dl -f 18 -o '%(id)s.%(ext)s' --print-json --no-warnings 
 
 #echo "vidName=$(youtube-dl -J --flat-playlist "$url" | jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
 echo $vidname
-youtube-dl -f 18 --playlist-items 0-33 "$url"
 ls
 cd ..
 
