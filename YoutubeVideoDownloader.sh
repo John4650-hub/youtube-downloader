@@ -11,7 +11,7 @@ url="https://youtube.com/playlist?list=PL8JRTKSSfvuqZwjDTvniu1iI2mfZw6mbw&si=v0Q
 echo "vidName=$(youtube-dl -J --flat-playlist "$url" | jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
 echo $vidname
 ls
-cd ..
 
-#youtube-dl -f 18 --playlist-items 0-33 https://youtube.com/playlist?list=PLK3Jf2YakZU98E_ia8q2n2-XXpf8vH98W 
+youtube-dl -f 18 --playlist-items "$url"
+cd ..
 #youtube-dl -f 18 https://youtu.be/A1UDtFqDL48 
