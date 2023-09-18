@@ -13,5 +13,5 @@ echo $vidname
 ls
 cd ..
 
-youtube-dl -f 18 --playlist-items 0-33 https://youtube.com/playlist?list=PLK3Jf2YakZU98E_ia8q2n2-XXpf8vH98W 
+#youtube-dl -f 18 --playlist-items 0-33 https://youtube.com/playlist?list=PLK3Jf2YakZU98E_ia8q2n2-XXpf8vH98W 
 #youtube-dl -f 18 https://youtu.be/A1UDtFqDL48 
