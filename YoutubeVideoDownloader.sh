@@ -8,7 +8,7 @@ echo /////////////
 url="https://youtube.com/playlist?list=PLcqmJII16GiDziYQiyuDnzIzCFNQ3Byxe&si=5LmiFL3HMzYpKsGG"
 #echo "vidName=$(youtube-dl -f 18 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
 
-youtube-dl -f 18 --playlist-items $url
+youtube-dl $url -f 18 --playlist-items
 echo "vidName=$(youtube-dl -J --flat-playlist "$url "| jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
 echo $vidname
 ls
