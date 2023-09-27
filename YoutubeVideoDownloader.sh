@@ -5,11 +5,11 @@ cd myMusic
 echo /////////////
 echo $vidName
 echo /////////////
-url="https://youtube.com/playlist?list=PLcqmJII16GiDziYQiyuDnzIzCFNQ3Byxe&si=5LmiFL3HMzYpKsGG"
-#echo "vidName=$(youtube-dl -f 18 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
+url="https://youtu.be/IlU-zDU6aQ0?si=GR2_uKMsLUWf1q2F"
+echo "vidName=$(youtube-dl -f 18 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
 
-youtube-dl -f 18 "$url"
-echo "vidName=$(youtube-dl -J --flat-playlist "$url "| jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
+#youtube-dl -f 18 "$url"
+#echo "vidName=$(youtube-dl -J --flat-playlist "$url "| jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
 echo $vidname
 ls
 
