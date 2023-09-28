@@ -5,7 +5,7 @@ cd myMusic
 echo /////////////
 echo $vidName
 echo /////////////
-url="https://youtu.be/XJnIdRXUi7A?si=VT4JVjbWSzsKj-92"
+url="https://youtu.be/SAHSVg7Jw_A?si=K40BlOTLc7VpXt-O"
 echo "vidName=$(youtube-dl -f 18 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
 
 #youtube-dl -f 18 "$url"
