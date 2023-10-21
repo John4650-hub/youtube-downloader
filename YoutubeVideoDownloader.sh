@@ -6,7 +6,7 @@ echo /////////////
 echo $vidName
 echo /////////////
 url="https://youtu.be/QdTy4xSY07U?si=WIXBPSx5I9l6OYTp"
-echo "vidName=$(youtube-dl -f 18 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
+echo "vidName=$(youtube-dl -f 18 -o '%(id)s.%(ext)s' --print-json --no-warnings "$url" | jq -r .title)"|tr ' ' '_'|tr '|' '_'|tr ':' '_' >> $GITHUB_ENV
 
 #youtube-dl -f 18 "$url"
 #echo "vidName=$(youtube-dl -J --flat-playlist "$url "| jq -r .title)"|tr ' ' '_' >> $GITHUB_ENV
