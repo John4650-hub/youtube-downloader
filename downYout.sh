@@ -1,7 +1,7 @@
 USER=john4650-hub \
 REPO=youtube-downloader \
 GITHUB_API="https://api.github.com/repos/${USER}/${REPO}/releases/latest"
-token="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"
+token="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"
 LATEST_URL=$(curl -L \
   -H 'Accept: application/json' \
   -H "Authorization: Bearer $token"\
