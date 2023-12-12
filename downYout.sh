@@ -9,7 +9,7 @@ LATEST_URL=$(curl -L \
   $GITHUB_API | jq -r ".assets[] | .url" | sed 's/\"//g')
 echo $LATEST_URL
 echo "Downloading ..." 
-cd /data/data/com.termux/files/home/storage/media-1
+
 curl -LC - \
   -H 'Accept: application/octet-stream'\
   -H "Authorization: Bearer $token"\
