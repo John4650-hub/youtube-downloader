@@ -29,7 +29,7 @@ jobs:
       with:
         name: Upload_audio
         path: ./${{env.vidName}}.zip
-        retention-days: 10
+        retention-days: 1
   release:
      name: Release apk
      needs: Download-vid
