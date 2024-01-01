@@ -15,3 +15,6 @@ echo $vidname
 ls
 
 cd ..
+mv myMusic "$vidName"
+ls
+zip -r "$vidName".zip "$vidName"/
