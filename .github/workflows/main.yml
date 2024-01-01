@@ -19,6 +19,7 @@ jobs:
       run: |
         echo "txt=$vidName" >> $GITHUB_OUTPUT
 
+    - run: ls -a
     - uses: actions/upload-artifact@v3
       with:
         name: Upload_audio
