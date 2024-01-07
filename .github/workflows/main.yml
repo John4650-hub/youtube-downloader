@@ -13,43 +13,11 @@ jobs:
       with:
         python-version: '3.10'
     - run: chmod +x YoutubeVideoDownloader.sh
-    - run: ./YoutubeVideoDownloader.sh
-    - name:
-      id: set_var
-      run: |
-        echo "txt=$vidName" >> $GITHUB_OUTPUT
-
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Upload_audio
-        path: ./vid.zip
-        retention-days: 1
-  release:
-     name: Release apk
-     needs: Download-vid
-     runs-on: ubuntu-latest
-     steps:
-       - name: Download apk from build
-         uses: actions/download-artifact@v1
-         with:
-           name: Upload_audio
-       - name: Create Release
-         id: create_release
-         uses: actions/create-release@v1
-         env:
-           GITHUB_TOKEN: ${{ secrets.TK }}
-         with:
-           tag_name: ${{ github.run_number }}
-           release_name: ${{ needs.Download-vid.outputs.vidTitle }}
-
-       - name: upload Release Apk
-         id: upload_release_assets
-         uses: actions/upload-release-asset@v1.0.1
-         env:
-            GITHUB_TOKEN: ${{ secrets.TK }}
-            vidName: ${{ needs.Download-vid.outputs.vidTitle }}
-         with:
-           upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path: Upload_audio/vid.zip
-           asset_name: vid.zip
-           asset_content_type: application/zip
+    - run: |
+        ./YoutubeVideoDownloader.sh
+        ls -a
+        gh release create  v0.0.${{ github.run_number }} vid.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.TK }}
+      shell: bash
+      name: videos
