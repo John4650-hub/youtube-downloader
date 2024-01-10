@@ -1,3 +1,4 @@
+read msg
 git add .
-git commit -m "videos"
+git commit -m "$msg"
 git push
