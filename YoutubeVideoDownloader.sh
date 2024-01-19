@@ -13,7 +13,8 @@ fomat="$(cat ../fomat)"
 if [[ "$fomat"=="vd" ]]; then
   echo "vidName=$(youtube-dl -f 18 -o 'vid1.mp4' --print-json --no-warnings "$url" | jq -r .title)"|tr ' ' '_'|tr '|' '_'|tr ':' '_'|tr '*' '_'|tr '>' '_'|tr '<' '_' > $GITHUB_ENV
   echo $GITHUB_ENV
-  ffmpeg -i vid1.mp4 -b:v 100k -c:a copy -c:v libx264 -c:a aac "$GITHUB_ENV.mp4"
+  ffmpeg -i vid1.mp4 -b:v 100k -c:a copy -c:v libx264 -c:a aac "hhfb.mp4"
+  ls -lh
   rm vid1.mp4
 
 fi
