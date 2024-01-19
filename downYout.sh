@@ -13,4 +13,4 @@ echo "Downloading ..."
 curl -LC - \
   -H 'Accept: application/octet-stream'\
   -H "Authorization: Bearer $token"\
- "${LATEST_URL}?access_token=${token}" -o vid.zip
+ "${LATEST_URL}?access_token=${token}" -o /data/data/com.termux/files/home/storage/media-1/vid.zip
