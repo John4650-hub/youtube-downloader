@@ -15,7 +15,7 @@ if [[ "$fomat"=="vd" ]]; then
   echo $GITHUB_ENV
   ffmpeg -i vid1.mp4 -b:v 100k -c:a copy -c:v libx264 -c:a aac "hhfb.mp4"
   ls -lh
-  rm vid1.mp4
+  rm vid581.mp4
 
 fi
 if [[ "$format" == "pl" ]]; then
