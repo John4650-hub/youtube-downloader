@@ -18,7 +18,7 @@ if [[ "$fomat"=="vd" ]]; then
   #rm vid1.mp4
 
 fi
-aif [[ "$format" == "pl" ]]; then
+if [[ "$format" == "pl" ]]; then
   echo "vidName=$(youtube-dl -J --flat-playlist "$url"| jq -r .title)"|tr ' ' '_'|tr '"' "_"|tr ':' '_' >> $GITHUB_ENV
   youtube-dl --yes-playlist -f 18 "$url"
 fi
