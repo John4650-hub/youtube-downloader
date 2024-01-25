@@ -4,7 +4,8 @@ fomat="$(cat fomat)"
 mkdir vid
 cd vid
 if [[ "$fomat"=="vd" ]]; then
-  vname=$(youtube-dl -f 18 -o 'vid1.mp4' --print-json --no-warnings "$url" | jq -r .title)
+  echo "$(youtube-dl -f 18 -o 'vid1.mp4' --print-json --no-warnings "$url" | jq -r .title)">metadata
+  vidname=$(cat metadata)
   vname=$(echo "$vname" | tr ' ' '_' | tr '|' '_' | tr ':' '_'|tr '*' '_'|tr '>' '_'|tr '<' '_')
   echo "ooooooollooooooooooooooooooooooooooooo"
   echo "ooooooollooooooooooooooooooooooooooooo"
