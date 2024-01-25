@@ -20,7 +20,7 @@ jobs:
     - run: |
         ./YoutubeVideoDownloader.sh
         ls -a
-        gh release create  v0.0.${{ github.run_number }} vid.zip
+        gh release create  v0.0.${{ github.run_number }} vid/*.mp4
       env:
         GITHUB_TOKEN: ${{ secrets.TK }}
       shell: bash
