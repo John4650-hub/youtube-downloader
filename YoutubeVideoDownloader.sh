@@ -1,6 +1,6 @@
 pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
-url="$(cat ../url__)"
-fomat="$(cat ../fomat)"
+url="$(cat url__)"
+fomat="$(cat fomat)"
 mkdir vid
 cd vid
 if [[ "$fomat"=="vd" ]]; then
