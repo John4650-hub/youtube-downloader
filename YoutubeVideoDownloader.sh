@@ -5,9 +5,8 @@ mkdir vid
 cd vid
 if [[ "$fomat"=="vd" ]]; then
   echo "$(youtube-dl -f 18 -o 'vid1.mp4' --print-json --no-warnings "$url" | jq -r .title)">metadata
-  cat metadata
   vidname=$(cat metadata)
-  vname=$(echo "$vname" | tr ' ' '_' | tr '|' '_' | tr ':' '_'|tr '*' '_'|tr '>' '_'|tr '<' '_')
+  vname=$(echo $vidname | tr ' ' '_' | tr '|' '_' | tr ':' '_' | tr '*' '_')
   echo "ooooooollooooooooooooooooooooooooooooo"
   echo "ooooooollooooooooooooooooooooooooooooo"
   echo "ooooooollooooooooooooooooooooooooooooo"
@@ -15,9 +14,9 @@ if [[ "$fomat"=="vd" ]]; then
   echo "ooooooollooooooooooooooooooooooooooooo"
   echo "ooooooollooooooooooooooooooooooooooooo"
   echo "ooooooollooooooooooooooooooooooooooooo"
-  #ffmpeg -i vid1.mp4 -b:v 100k -c:a copy -c:v libx264 -c:a aac "${vname}.mp4"
-  #ls -lh
-  #rm vid1.mp4
+  ffmpeg -i vid1.mp4 -b:v 100k -c:a copy -c:v libx264 -c:a aac "${vname}.mp4"
+  ls -lh
+  rm vid1.mp4
 
 fi
 if [[ "$format" == "pl" ]]; then
