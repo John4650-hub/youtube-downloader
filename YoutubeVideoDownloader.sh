@@ -6,11 +6,12 @@ pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
 # Read URL and format from files
 url="$(cat url__)"
 format="$(cat format)" # Corrected variable name here
-
+echo "d1"
 # Create directory for videos and enter it
-mkdir -p vid
+mkdir vid
 cd vid
 
+echo "d2"
 if [[ "$format" == "vd" ]]; then
     # Process for a single video
     vid_info=$(youtube-dl -f best -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
