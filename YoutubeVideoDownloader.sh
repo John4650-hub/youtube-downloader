@@ -24,6 +24,7 @@ elif [[ "$format" == "pl" ]]; then
     # Process for a playlist
     youtube-dl -f best -o '%(title)s.%(ext)s' --yes-playlist "$url"
     for file in *; do
+      echo "here"
         if [[ -f "$file" ]]; then
             base_name=$(basename "$file" .${file##*.})
             # Ensure the filename is safe
