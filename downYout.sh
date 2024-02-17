@@ -1,6 +1,6 @@
 USER=john4650-hub \
 REPO=youtube-downloader \
-TAG="v0.0.302"
+TAG="v0.0.313"
 GITHUB_API="https://api.github.com/repos/${USER}/${REPO}/releases/tags/${TAG}"
 token="$(cat ../.secrets/git_token)"
 echo $token
