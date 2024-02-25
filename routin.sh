@@ -5,5 +5,4 @@ gitsh
 git add .
 git commit -m "Download video"
 git push
-pysh
 
