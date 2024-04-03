@@ -14,16 +14,16 @@ cd vid
 echo "d2"
 if [[ "$format" == "vd" ]]; then
     # Process for a single video
-    vid_info=$(youtube-dl -f best -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
+    vid_info=$(youtube-dl -f 18 -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
     vid_title=$(echo $vid_info | jq -r .title | tr '+|:*' '____')
     vid_ext=$(echo $vid_info | jq -r .ext)
 
     # Rename and convert the video
-    ffmpeg -i "${vid_title}.${vid_ext}" -b:v 100k -c:a aac -c:v libx264 "${vid_title}_formatted.mp4"
-    rm "${vid_title}.${vid_ext}"
+    #ffmpeg -i "${vid_title}.${vid_ext}" -b:v 100k -c:a aac -c:v libx264 "${vid_title}_formatted.mp4"
+    #rm "${vid_title}.${vid_ext}"
 elif [[ "$format" == "pl" ]]; then
     # Process for a playlist
-    youtube-dl -f best -o '%(title)s.%(ext)s' --yes-playlist "$url"
+    youtube-dl -f 18 -o '%(title)s.%(ext)s' --yes-playlist "$url"
     for file in *; do
       echo "here"
         if [[ -f "$file" ]]; then
@@ -31,8 +31,8 @@ elif [[ "$format" == "pl" ]]; then
             # Ensure the filename is safe
             safe_name=$(echo $base_name | tr '+|:*' '____')
             # Convert and rename the video
-            ffmpeg -i "$file" -b:v 100k -c:a aac -c:v libx264 "${safe_name}_formatted.mp4"
-            rm "$file"
+            #ffmpeg -i "$file" -b:v 100k -c:a aac -c:v libx264 "${safe_name}_formatted.mp4"
+            #rm "$file"
         fi
     done
 fi
