@@ -10,7 +10,7 @@ echo "d1"
 # Create directory for videos and enter it
 mkdir vid
 cd vid
-
+mv ../rename.py .
 echo "d2"
 if [[ "$format" == "vd" ]]; then
     # Process for a single video
@@ -36,5 +36,7 @@ elif [[ "$format" == "pl" ]]; then
         fi
     done
 fi
+
+python rename.py
 
 cd ..
