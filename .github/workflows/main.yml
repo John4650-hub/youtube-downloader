@@ -13,9 +13,9 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install ffmpeg
-      run: |
-        sudo apt-get update && sudo apt-get upgrade
-        sudo apt-get install ffmpeg
+      use: AnimMouse/setup-ffmpeg@v1
+      with:
+        version: 7.0
     - run: chmod +x YoutubeVideoDownloader.sh
     - run: |
         ./YoutubeVideoDownloader.sh
