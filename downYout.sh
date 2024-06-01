@@ -1,8 +1,8 @@
 #!/bin/bash
 USER=john4650-hub
 REPO=youtube-downloader
-for i in {8..9}; do
-  TAG="38$i.0.0"
+for i in {1..5}; do
+  TAG="39$i.0.0"
   echo $TAG
   GITHUB_API="https://api.github.com/repos/${USER}/${REPO}/releases/tags/${TAG}"
   token="$(cat ../.secrets/git_token)"
