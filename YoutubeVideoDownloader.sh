@@ -36,7 +36,7 @@ elif [[ "$format" == "pl" ]]; then
         fi
     done
 
-elif [[ "format" == "lst" ]]; then
+elif [[ "$format" == "lst" ]]; then
     # Process for a single video or a list of videos
     while IFS= read -r url; do
         vid_info=$(youtube-dl -f 18 -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
