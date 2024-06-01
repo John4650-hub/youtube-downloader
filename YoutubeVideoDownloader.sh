@@ -42,7 +42,7 @@ elif [[ "$format" == "lst" ]]; then
         vid_info=$(youtube-dl -f 18 -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
         vid_title=$(echo $vid_info | jq -r .title | tr '+|:*' '____')
         vid_ext=$(echo $vid_info | jq -r .ext)
-      done < "$(cat urls)"
+      done < "$(cat ../urls)"
 fi
 
 python rename.py
