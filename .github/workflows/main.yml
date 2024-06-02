@@ -20,7 +20,8 @@ jobs:
         ./YoutubeVideoDownloader.sh
         ls -a
         zip -r vid.zip vid
-        gh release create  ${{ github.run_number }}.0.0 vid.zip
+        tit=$(cat title.txt)
+        gh release create --notes-file descript.txt -t $tit   ${{ github.run_number }}.0.0 vid.zip
       env:
         GITHUB_TOKEN: ${{ secrets.TK }}
       shell: bash
