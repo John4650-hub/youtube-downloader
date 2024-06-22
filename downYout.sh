@@ -2,7 +2,7 @@
 USER=john4650-hub
 REPO=youtube-downloader
 for i in {5..6}; do
-  TAG="420.0.0"
+  TAG="423.0.0"
   echo $TAG
   GITHUB_API="https://api.github.com/repos/${USER}/${REPO}/releases/tags/${TAG}"
   token="$(cat ../.secrets/git_token)"
@@ -14,7 +14,7 @@ for i in {5..6}; do
   echo $LATEST_URL
   echo "Downloading ..." 
   cd /storage/3461-6461/Android/media/com.termux/vid
-  curl -LC - \
+  curl -L \
     -H 'Accept: application/octet-stream'\
     -H "Authorization: Bearer $token"\
    "${LATEST_URL}" -o "vid${TAG}.zip"
