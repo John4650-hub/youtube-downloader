@@ -2,7 +2,7 @@
 USER=john4650-hub
 REPO=youtube-downloader
 for i in {5..6}; do
-  TAG="423.0.0"
+  TAG="426.0.0"
   echo $TAG
   GITHUB_API="https://api.github.com/repos/${USER}/${REPO}/releases/tags/${TAG}"
   token="$(cat ../.secrets/git_token)"
