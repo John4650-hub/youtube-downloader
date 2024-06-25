@@ -1,7 +1,7 @@
 #!/bin/bash
 USER=john4650-hub
 REPO=youtube-downloader
-TAG="429.0.0"
+TAG="436.0.0"
 echo $TAG
 GITHUB_API="https://api.github.com/repos/${USER}/${REPO}/releases/tags/${TAG}"
 token="$(cat ../.secrets/git_token)"
@@ -13,7 +13,7 @@ LATEST_URL=$(curl -L \
 echo $LATEST_URL
 echo "Downloading ..." 
 cd /storage/3461-6461/Android/media/com.termux/vid
-curl -L \
+curl -LC - \
   -H 'Accept: application/octet-stream'\
   -H "Authorization: Bearer $token"\
  "${LATEST_URL}" -o "vid${TAG}.zip"
