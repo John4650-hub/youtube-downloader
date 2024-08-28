@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install youtube-dl
-pip install git+https://github.com/ytdl-org/youtube-dl.git@master#egg=youtube_dl
+pip install yt-dlp
 
 # Read URL and format from files
 url="$(cat url__)"
@@ -14,8 +14,8 @@ mv ../rename.py .
 echo "d2"
 if [[ "$format" == "vd" ]]; then
     # Process for a single video
-    vid_info=$(youtube-dl -f 18 -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
-    (youtube-dl --get-description --skip-download "$url")>../descript.txt
+    vid_info=$(yt-dlp -f 18 -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
+    (yt-dlp --get-description --skip-download "$url")>../descript.txt
     vid_title=$(echo $vid_info | jq -r .title | tr '+|:*' '____')
     (echo "$vid_title")>../title.txt
     vid_ext=$(echo $vid_info | jq -r .ext)
