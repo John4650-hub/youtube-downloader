@@ -14,7 +14,7 @@ mv ../rename.py .
 echo "d2"
 if [[ "$format" == "vd" ]]; then
     # Process for a single video
-    vid_info=$(yt-dlp -f "mp4" "$url")
+    vid_info=$(y2mate -f "mp4" "$url")
     ls -a
     #(yt-dlp --get-description --skip-download "$url")>../descript.txt
     #vid_title=$(echo $vid_info | jq -r .title | tr '+|:*' '____')
