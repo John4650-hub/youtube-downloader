@@ -24,11 +24,11 @@ output = subprocess.run(
 
 info = json.loads(output.stdout)
 Vidname=info["title"]
-if info['formats']['itag']=="18":
-    vidurl=info['formats']['url']
+if info['formats'][0]['itag']==18:
+    vidurl=info['formats'][0]['url']
     with open("url.txt",'w') as fh:
         fh.write(vidurl)
 with open("info.txt","w") as fhand:
-    fhand.write(vidname)
+    fhand.write(Vidname)
 
 
