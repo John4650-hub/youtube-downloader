@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install youtube-dl
-pip install yt-dlp
+pip install y2mate-api
 
 # Read URL and format from files
 url="$(cat url__)"
@@ -14,11 +14,12 @@ mv ../rename.py .
 echo "d2"
 if [[ "$format" == "vd" ]]; then
     # Process for a single video
-    vid_info=$(yt-dlp -f 18 -o '%(title)s.%(ext)s' --print-json --no-warnings "$url")
-    (yt-dlp --get-description --skip-download "$url")>../descript.txt
-    vid_title=$(echo $vid_info | jq -r .title | tr '+|:*' '____')
-    (echo "$vid_title")>../title.txt
-    vid_ext=$(echo $vid_info | jq -r .ext)
+    vid_info=$(yt-dlp -f "mp4" "$url")
+    ls -a
+    #(yt-dlp --get-description --skip-download "$url")>../descript.txt
+    #vid_title=$(echo $vid_info | jq -r .title | tr '+|:*' '____')
+    #(echo "$vid_title")>../title.txt
+    #vid_ext=$(echo $vid_info | jq -r .ext)
 
     # Rename and convert the video
     #ffmpeg -i "${vid_title}.${vid_ext}" -b:v 100k -c:a aac -c:v libx264 "${vid_title}_formatted.mp4"
