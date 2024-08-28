@@ -3,7 +3,7 @@ import json
 ID = ""
 with open("url.txt", "r") as urlHandle:
     url = urlHandle.read()
-ID = url.split("/")[-1].strip()
+ID = url.split("=")[-1].strip()
 
 output = subprocess.run(
     [

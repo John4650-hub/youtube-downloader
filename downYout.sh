@@ -1,7 +1,7 @@
 #!/bin/bash
 USER=john4650-hub
 REPO=youtube-downloader
-TAG="444.0.0"
+TAG="457.0.0"
 echo $TAG
 GITHUB_API="https://api.github.com/repos/${USER}/${REPO}/releases/tags/${TAG}"
 token="$(cat ../.secrets/git_token)"
