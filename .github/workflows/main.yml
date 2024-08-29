@@ -18,8 +18,8 @@ jobs:
     - run: chmod +x YoutubeVideoDownloader.sh
     - run: |
         ./YoutubeVideoDownloader.sh
-        zip -r vid.zip vid
-        gh release create ${{ github.run_number }}.0.0 vid.zip
+        
+        gh release create ${{ github.run_number }}.0.0 vid/*.mp4
       env:
         GITHUB_TOKEN: ${{ secrets.TK }}
       shell: bash
