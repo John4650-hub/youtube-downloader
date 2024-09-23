@@ -1,4 +1,4 @@
-name: Build youtube video downloader
+name: Build youtube video downloaderi
 
 on:
   schedule:
