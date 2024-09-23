@@ -1,9 +1,9 @@
 import base64
 import json
 import subprocess
-
+import os
 def getTk():
-    return base64.b64decode("Z2hwX3ZST3k3ZTJPdXFTUGVpVTdFQ045NHVZQ0ZUU05VYzRVZFVENw==").decode("utf-8")
+    return os.getenv("GITHUB_TOKEN")
 
 
 def add_padding(txt):

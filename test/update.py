@@ -1,10 +1,9 @@
+import os
 import base64
 import json
 import requests  # Import the requests library
 import subprocess
-personal_access_token = base64.b64decode(
-    "Z2hwX2F3MG90NUdVQkVRS1dnYnY2TGRxbWpkenREUGZoSjJ3enZOag=="
-).decode("ascii")
+personal_access_token = os.getenv("GITHUB_TOKEN")
 
 
 def get_sha(api):
