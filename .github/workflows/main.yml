@@ -4,9 +4,12 @@ on:
   # Corrected the spelling of "cron" and fixed syntax issues with the cron expression
   schedule:
     - cron: "*/2 * * * *"  # This will run every 2 minutes
-  push:
-    branches:
-      - dl  # Triggers on push events to the 'dl' branch
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Run tests on branch'
+        required: true
+        default: 'dl' # Triggers on push events to the 'dl' branch
 
 jobs:
   Download-vid:
