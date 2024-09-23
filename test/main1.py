@@ -1,5 +1,6 @@
 import subprocess
 import json
+
 ID = ""
 with open("url.txt", "r") as urlHandle:
     url = urlHandle.read()
@@ -18,18 +19,16 @@ output = subprocess.run(
     ],
     check=True,
     text=True,
-    capture_output=True
+    capture_output=True,
 )
 
 info = json.loads(output.stdout)
 with open("foo.json", "w") as fhw:
-    json.dump(info,fhw, indent=2)
-Vidname=info["title"]
-if info['adaptiveFormats'][0]['itag']==137:
-    vidurl=info['adaptiveFormats'][0]['url']
-    with open("url.txt",'w') as fh:
+    json.dump(info, fhw, indent=2)
+Vidname = info["title"]
+if info["adaptiveFormats"][0]["itag"] == 137:
+    vidurl = info["adaptiveFormats"][0]["url"]
+    with open("url.txt", "w") as fh:
         fh.write(vidurl)
-with open("info.txt","w") as fhand:
+with open("info.txt", "w") as fhand:
     fhand.write(Vidname)
-
-

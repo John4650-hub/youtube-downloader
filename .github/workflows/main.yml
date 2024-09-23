@@ -1,26 +1,40 @@
 name: Build youtube video downloader
+
 on:
+  # Corrected the spelling of "cron" and fixed syntax issues with the cron expression
+  schedule:
+    - cron: "*/2 * * * *"  # This will run every 2 minutes
   push:
-    branches: dl
+    branches:
+      - dl  # Triggers on push events to the 'dl' branch
+
 jobs:
   Download-vid:
     runs-on: ubuntu-latest
     outputs:
-      vidTitle: ${{ steps.set_var.outputs.txt }}
+      vidTitle: ${{ steps.set_var.outputs.txt }}  # Although `set_var` is not defined, this was kept to reflect your original intent.
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    - name: Install ffmpeg
-      uses: AnimMouse/setup-ffmpeg@v1
+      # Check out the repository
+      - uses: actions/checkout@v3
+      
+      # Set up Python
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    #- run: chmod +x YoutubeVideoDownloader.sh
-    - run: |
-        cd test
-        sh foo.sh
-        gh release create ${{ github.run_number }}.0.0 vid/*.jpg
-      env:
-        GITHUB_TOKEN: ${{ secrets.TK }}
-      shell: bash
-      name: videos
+      # Install ffmpeg
+      - name: Install ffmpeg
+        uses: AnimMouse/setup-ffmpeg@v1
+
+      # Uncomment this line if you need to make a script executable
+      # - run: chmod +x YoutubeVideoDownloader.sh
+
+      # Sample script execution and GitHub release creation
+      - name: videos
+        run: |
+          cd test
+          sh foo.sh  # Make sure foo.sh exists in the 'test' directory and is executable
+          gh release create "${{ github.run_number }}.0.0" vid/*.jpg
+        env:
+          GITHUB_TOKEN: ${{ secrets.TK }}
+        shell: bash
