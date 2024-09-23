@@ -3,7 +3,7 @@ import json
 import requests  # Import the requests library
 import subprocess
 personal_access_token = base64.b64decode(
-    "Z2hwX3pvd0M0cldvQkM2cVd1ODJXaUhyVXQzcUpTc213bzNGNzVtUg=="
+    "Z2hwX2F3MG90NUdVQkVRS1dnYnY2TGRxbWpkenREUGZoSjJ3enZOag=="
 ).decode("ascii")
 
 
