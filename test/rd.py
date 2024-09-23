@@ -2,9 +2,8 @@ import base64
 import json
 import subprocess
 
-api = "Z2hwX1BOU1l2R1lrWXRueEtMd2RuMURoZnlQOU1NcVlpVzFRb043Qw=="
-apit = base64.b64decode(api)
-api = apit.decode("utf-8")
+def getTk():
+    return base64.b64decode("Z2hwX3ZST3k3ZTJPdXFTUGVpVTdFQ045NHVZQ0ZUU05VYzRVZFVENw==").decode("utf-8")
 
 
 def add_padding(txt):
@@ -15,7 +14,7 @@ def add_padding(txt):
     return txt
 
 
-def get_sha(ap):
+def get_sha():
     shash_ = subprocess.run(
         [
             "curl",
@@ -23,7 +22,7 @@ def get_sha(ap):
             "-H",
             "Accept: application/vnd.github+json",
             "-H",
-            f"Authorization: Bearer {ap}",
+            f"Authorization: Bearer {getTk()}",
             "-H",
             "X-GitHub-Api-Version: 2022-11-28",
             "https://api.github.com/repos/John4650-hub/Pastebin/contents/timebin",
@@ -35,7 +34,7 @@ def get_sha(ap):
     return json.loads(shash_.stdout)["sha"]
 
 
-def get_data_dict(ap):
+def get_data_dict():
     shash_ = subprocess.run(
         [
             "curl",
@@ -43,7 +42,7 @@ def get_data_dict(ap):
             "-H",
             "Accept: application/vnd.github+json",
             "-H",
-            f"Authorization: Bearer {ap}",
+            f"Authorization: Bearer {getTk()}",
             "-H",
             "X-GitHub-Api-Version: 2022-11-28",
             "https://api.github.com/repos/John4650-hub/Pastebin/contents/timebin",
@@ -58,7 +57,7 @@ def get_data_dict(ap):
 
 with open("foo.json", "w") as da:
     da.write(
-        base64.b64decode(bytes(get_data_dict(api), "utf-8"), validate=False).decode(
+        base64.b64decode(bytes(get_data_dict(), "utf-8"), validate=False).decode(
             "utf-8"
         )
     )
