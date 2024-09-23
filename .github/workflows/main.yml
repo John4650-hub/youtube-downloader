@@ -2,7 +2,7 @@ name: Build youtube video downloader
 
 on:
   schedule:
-      - cron: */2 * * * *
+      - cron: "*/2 * * * *"
   workflow_dispatch:
       inputs:
         branch:
