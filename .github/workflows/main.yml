@@ -15,7 +15,7 @@ jobs:
     - name: Install ffmpeg
       uses: AnimMouse/setup-ffmpeg@v1
 
-    - run: chmod +x YoutubeVideoDownloader.sh
+        #- run: chmod +x YoutubeVideoDownloader.sh
     - run: |
         cd test
       #./YoutubeVideoDownloader.sh
