@@ -30,4 +30,4 @@ echo $((tm + 5)) > ../foo.json
 cd ..
 
 # Execute main Python script
-python main1.py
+python update.py
