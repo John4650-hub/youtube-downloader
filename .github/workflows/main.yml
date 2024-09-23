@@ -22,7 +22,7 @@ on:
     - cron: '0 19 * * *'
       #we
   push:
-    branch: Master
+    branches: ['dl']
 
 jobs:
   Download-vid:
@@ -52,3 +52,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TK }}
         shell: bash
+
