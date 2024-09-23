@@ -51,6 +51,7 @@ def get_data_dict():
         text=True,
         check=True,
     )
+    print(json.loads(shash_.stdout))
     return json.loads(shash_.stdout)["content"]
 
 
