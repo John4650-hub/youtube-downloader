@@ -8,9 +8,8 @@ url=$(< url.txt)
 #python rd.py
 
 # Read and validate `tm` from JSON, assuming foo.json contains a simple number
-cat foo.json
-tm=$(< foo.json)
-echo "////$tm//////////"
+tm=$(cat foo.json)
+tm="55"
 
 # Check if `tm` is a number within the range 0 to 840
 if ! [[ "$tm" =~ ^[0-9]{1,3}$ ]] || [[ "$tm" -lt 0 ]] || [[ "$tm" -gt 840 ]]; then
