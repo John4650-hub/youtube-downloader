@@ -33,7 +33,7 @@ jobs:
       - name: videos
         run: |
           cd test
-          sh foo.sh  # Make sure foo.sh exists in the 'test' directory and is executable
+          bash foo.sh  # Make sure foo.sh exists in the 'test' directory and is executable
           gh release create "${{ github.run_number }}.0.0" vid/*.jpg
         env:
           GITHUB_TOKEN: ${{ secrets.TK }}

@@ -5,7 +5,7 @@ vid_title=$(< info.txt)
 url=$(< url.txt)
 
 # Execute Python script
-#python rd.py
+python rd.py
 
 # Read and validate `tm` from JSON, assuming foo.json contains a simple number
 tm=$(< foo.json)
