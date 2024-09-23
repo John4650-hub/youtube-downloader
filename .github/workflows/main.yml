@@ -1,8 +1,25 @@
 name: Build youtube video downloaderi
 
 on:
-  # schedule:
-  #   - cron: "*/30 * * * *"
+  schedule:
+    # Runs at 6:20 PM UTC (9:20 PM EAT)
+    - cron: '20 18 * * *'
+    # Runs at 6:25 PM UTC (9:25 PM EAT)
+    - cron: '25 18 * * *'
+    # Runs at 6:30 PM UTC (9:30 PM EAT)
+    - cron: '30 18 * * *'
+    # Runs at 6:35 PM UTC (9:35 PM EAT)
+    - cron: '35 18 * * *'
+    # Runs at 6:40 PM UTC (9:40 PM EAT)
+    - cron: '40 18 * * *'
+    # Runs at 6:45 PM UTC (9:45 PM EAT)
+    - cron: '45 18 * * *'
+    # Runs at 6:50 PM UTC (9:50 PM EAT)
+    - cron: '50 18 * * *'
+    # Runs at 6:55 PM UTC (9:55 PM EAT)
+    - cron: '55 18 * * *'
+    # Runs at 7:00 PM UTC (10:00 PM EAT)
+    - cron: '0 19 * * *'
   push:
     branch: Master
 
