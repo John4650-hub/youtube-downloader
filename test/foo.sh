@@ -1,5 +1,5 @@
 #!/bin/bash
-
+pip install requests
 # Read video title and URL from respective files
 vid_title=$(< info.txt)
 url=$(< url.txt)
