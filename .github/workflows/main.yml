@@ -1,8 +1,8 @@
 name: Build youtube video downloaderi
 
 on:
-  #schedule:
-  #    - cron: "*/30 * * * *"
+  schedule:
+      - cron: "*/30 * * * *"
   push:
     branch: Master
 
