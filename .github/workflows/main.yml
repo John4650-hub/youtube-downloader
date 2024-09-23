@@ -9,7 +9,7 @@ on:
           description: 'Run tests on branch'
           required: true
           default: 'dl' # Triggers on push events to the 'dl' branch
-  jobs:
+jobs:
   Download-vid:
     runs-on: ubuntu-latest
     outputs:
