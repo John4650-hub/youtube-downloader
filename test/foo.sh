@@ -11,7 +11,7 @@ python rd.py
 tm=$(< foo.json)
 
 # Check if `tm` is a number
-if ! [[ "$tm" =~ ^[0-9]+$ ]]; then
+if ! [[ "$tm" =~ ^([0-9]|[1-9][0-9]|[1-7][0-9]{2}|8[0-3][0-9]|840)$ ]]; then
   echo "Error: tm in foo.json is not a valid number."
   exit 1
 fi
