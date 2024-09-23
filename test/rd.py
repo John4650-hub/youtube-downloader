@@ -59,4 +59,4 @@ with open("foo.json", "w") as da:
         base64.b64decode(bytes(get_data_dict(), "utf-8"), validate=False).decode(
             "utf-8"
         )
-    ))
+    ).strip())

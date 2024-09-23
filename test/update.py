@@ -29,7 +29,7 @@ def get_sha(api):
 def read_json_file(filepath):
     """ Read a JSON file and return its contents as a base64-encoded string """
     with open(filepath, "r") as file:
-        content = file.read()  # Read and parse JSON file, then dump it to a string
+        content = file.read().strip()  # Read and parse JSON file, then dump it to a string
     return base64.b64encode(content.encode("utf-8")).decode("utf-8")
 
 # Define your file path and sha
