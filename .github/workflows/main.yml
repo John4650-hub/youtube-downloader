@@ -6,8 +6,6 @@ on:
 jobs:
   Download-vid:
     runs-on: ubuntu-latest
-    outputs:
-      vidTitle: ${{ steps.set_var.outputs.txt }}  # Although `set_var` is not defined, this was kept to reflect your original intent.
     steps:
       # Check out the repository
       - uses: actions/checkout@v3
