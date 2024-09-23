@@ -1,9 +1,8 @@
 #!/bin/bash
-mkdir vid
-cd vid
 vid_title=$(echo $(cat info.txt))
 url=$(echo $(cat url.txt))
-echo $url
+mkdir vid
+cd vid
 #ffmpeg -i "${url}" -b:v 100k -c:a aac -c:v libx264 "${vid_title}.mp4"
 #timeout 10s ffmpeg
 #ffmpeg -i "$url" -vframes 1 "${vid_title}.jpg"
