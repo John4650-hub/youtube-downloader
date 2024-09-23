@@ -2,8 +2,7 @@ name: Build youtube video downloader
 
 on:
   schedule:
-      - cron: "*/2 * * * *"
-  workflow_dispatch: 
+      - cron: "/2 * * * *"
 jobs:
   Download-vid:
     runs-on: ubuntu-latest
