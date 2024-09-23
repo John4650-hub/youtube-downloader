@@ -51,13 +51,12 @@ def get_data_dict():
         text=True,
         check=True,
     )
-
     return json.loads(shash_.stdout)["content"]
 
 
 with open("foo.json", "w") as da:
-    da.write(
+    da.write(str(
         base64.b64decode(bytes(get_data_dict(), "utf-8"), validate=False).decode(
             "utf-8"
         )
-    )
+    ))
