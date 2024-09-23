@@ -20,6 +20,7 @@ on:
     - cron: '55 18 * * *'
     # Runs at 7:00 PM UTC (10:00 PM EAT)
     - cron: '0 19 * * *'
+      #we
   push:
     branch: Master
 
