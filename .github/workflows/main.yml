@@ -2,7 +2,9 @@ name: Build youtube video downloaderi
 
 on:
   schedule:
-      - cron: "*/2 * * * *"
+      - cron: "*/5 * * * *"
+  push:
+
 jobs:
   Download-vid:
     runs-on: ubuntu-latest
