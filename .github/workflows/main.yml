@@ -9,6 +9,8 @@ on:
         default: 'dl' # Triggers on push events to the 'dl' branch
   schedule:
       - cron: "*/2 * * * *"
+  push:
+    branch: dl
 jobs:
   Download-vid:
     runs-on: ubuntu-latest
