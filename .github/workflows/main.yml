@@ -1,17 +1,15 @@
 name: Build youtube video downloader
 
 on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Run tests on branch'
-        required: true
-        default: 'dl' # Triggers on push events to the 'dl' branch
   schedule:
-      - cron: "*/2 * * * *"
-  push:
-    branch: dl
-jobs:
+      - cron: */2 * * * *
+  workflow_dispatch:
+      inputs:
+        branch:
+          description: 'Run tests on branch'
+          required: true
+          default: 'dl' # Triggers on push events to the 'dl' branch
+  jobs:
   Download-vid:
     runs-on: ubuntu-latest
     outputs:
