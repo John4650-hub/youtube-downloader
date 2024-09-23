@@ -55,7 +55,7 @@ headers = {
 
 # Make the PUT request to the GitHub API
 response = requests.put(
-    "https://api.github.com/repos/John4650-hub/Pastebin/contents/timebin.md",
+    "https://api.github.com/repos/John4650-hub/Pastebin/contents/timebin",
     headers=headers,
     json=data,
 )
