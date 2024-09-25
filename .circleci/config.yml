@@ -17,7 +17,7 @@ workflows:
               only:
                 - dl
       - schedule:
-          cron: '19 4 * * *'
+          cron: '51 4 * * *'
           filters:
             branches:
               only:
