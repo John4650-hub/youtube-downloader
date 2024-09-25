@@ -1,0 +1,23 @@
+version: 2.1
+
+jobs:
+  build:
+    triggers:
+      - schedule:
+          cron: '15 4 * * *'
+
+      # Runs at 7:17 AM EAT (4:17 AM UTC)
+          cron: '17 4 * * *'
+
+      # Runs at 7:19 AM EAT (4:19 AM UTC)
+          cron: '19 4 * * *'
+          filters:
+            branches:
+              only:
+                - dl
+    docker:
+      - image: johnel/hello_docker1
+    steps:
+      - checkout
+      - run: cd test && bash foo.sh
+      - run: gh release create "1900.0.0" vid/*.jpg
