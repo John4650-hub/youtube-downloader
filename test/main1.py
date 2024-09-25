@@ -2,8 +2,7 @@ import subprocess
 import json
 
 ID = ""
-with open("url.txt", "r") as urlHandle:
-    url = urlHandle.read()
+url = "https://iv.ggtyler.dev/watch?v=xJudZttWuEY"
 ID = url.split("=")[-1].strip()
 output = subprocess.run(
     [
