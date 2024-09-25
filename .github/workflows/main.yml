@@ -435,8 +435,8 @@ on:
 
 # Runs at 6:00 PM EAT (3:00 PM UTC)
     - cron: '0 15 * * *'
-      #pull-request:
-      #branches: ['dl']
+  pull-request:
+    branches: ['dl']
 
 jobs:
   Download-vid:
