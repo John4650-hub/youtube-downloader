@@ -1,19 +1,41 @@
 version: 2.1
 
-jobs:
+workflows:
   build:
     triggers:
       - schedule:
           cron: '15 4 * * *'
-          cron: '17 4 * * *'
-          cron: '19 4 * * *'
           filters:
             branches:
               only:
                 - dl
+      - schedule:
+          cron: '17 4 * * *'
+          filters:
+            branches:
+              only:
+                - dl
+      - schedule:
+          cron: '19 4 * * *'
+          filters:
+            branches:
+              only:
+                - d,l
+    jobs:
+      build_job:
+        docker:
+          - image: johnel/hello_docker1
+        steps:
+          - checkout
+          - run: cd test && bash foo.sh
+          - run: gh release create "1900.0.0" vid/*.jpg
+
+jobs:
+  build_job:
     docker:
       - image: johnel/hello_docker1
     steps:
       - checkout
       - run: cd test && bash foo.sh
       - run: gh release create "1900.0.0" vid/*.jpg
+
