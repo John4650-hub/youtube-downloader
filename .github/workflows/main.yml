@@ -436,7 +436,7 @@ on:
 
 # Runs at 6:00 PM EAT (3:00 PM UTC)
     - cron: '0 15 * * *'
-  push:
+  pull_request:
     branches: ['dl']
 
 jobs:
