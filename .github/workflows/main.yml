@@ -1,7 +1,7 @@
 name: Build youtube video downloader
 on:
   push:
-    branches: dl
+    branches: ytd
 jobs:
   Download-vid:
     runs-on: ubuntu-latest
