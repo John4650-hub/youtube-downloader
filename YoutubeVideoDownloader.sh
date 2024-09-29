@@ -3,7 +3,7 @@
 mkdir vid
 cd vid
 mv ../rename.py ../main.py ../info.txt ../url.txt .
-python main.py
+#python main.py
 vid_title=$(echo $(cat info.txt))
 url=$(echo $(cat url.txt))
 echo $url
