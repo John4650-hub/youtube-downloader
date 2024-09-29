@@ -3,6 +3,7 @@ import json
 
 ID = ""
 url = "https://iv.ggtyler.dev/watch?v=1ex_bNIFR1A"
+url = "https://inv.nadeko.net/watch?v=tz8WM50zjmY"
 ID = url.split("=")[-1].strip()
 output = subprocess.run(
     [
