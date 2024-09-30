@@ -220,7 +220,8 @@ jobs:
       # Install ffmpeg
       - name: Install ffmpeg
         uses: AnimMouse/setup-ffmpeg@v1
-        run: |
+
+      - run: |
           bash foo.sh  # Make sure foo.sh exists in the 'test' directory and is executable
           gh release create "${{ github.run_number }}.0.0" vid/*.jpg
         env:
