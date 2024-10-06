@@ -1,10 +1,11 @@
 import subprocess
 import json
-ID = ""
-with open("url.txt", "r") as urlHandle:
-    url = urlHandle.read()
-ID = url.split("=")[-1].strip()
 
+ID = ""
+url = "https://iv.ggtyler.dev/watch?v=1ex_bNIFR1A"
+url = "https://www.youtube.com/watch?v=uuk0FbpOO7E"
+url="https://www.youtube.com/watch?v=g-qBkAygumo"
+ID = url.split("=")[-1].strip()
 output = subprocess.run(
     [
         "curl",
@@ -19,16 +20,16 @@ output = subprocess.run(
     ],
     check=True,
     text=True,
-    capture_output=True
+    capture_output=True,
 )
 
 info = json.loads(output.stdout)
-Vidname=info["title"]
-if info['formats'][0]['itag']==18:
-    vidurl=info['formats'][0]['url']
-    with open("url.txt",'w') as fh:
+with open("foo.json", "w") as fhw:
+    json.dump(info, fhw, indent=2)
+Vidname = info["title"]
+if info["adaptiveFormats"][0]["itag"] == 137:
+    vidurl = info["adaptiveFormats"][0]["url"]
+    with open("url.txt", "w") as fh:
         fh.write(vidurl)
-with open("info.txt","w") as fhand:
+with open("info.txt", "w") as fhand:
     fhand.write(Vidname)
-
-

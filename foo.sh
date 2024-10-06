@@ -1,7 +1,7 @@
 #!/bin/bash
 pip install requests
 # Read video title and URL from respective files
-python main1.py
+python main.py
 vid_title=$(< info.txt)
 url=$(< url.txt)
 
