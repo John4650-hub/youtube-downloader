@@ -2,6 +2,240 @@ name: Build youtube video downloaderi
 
 on:
   schedule:
+# Runs at 6:00 PM EAT (3:00 PM UTC)
+    - cron: '0 15 * * *'
+
+# Runs at 6:05 PM EAT (3:05 PM UTC)
+    - cron: '5 15 * * *'
+
+# Runs at 6:10 PM EAT (3:10 PM UTC)
+    - cron: '10 15 * * *'
+
+# Runs at 6:15 PM EAT (3:15 PM UTC)
+    - cron: '15 15 * * *'
+
+# Runs at 6:20 PM EAT (3:20 PM UTC)
+    - cron: '20 15 * * *'
+
+# Runs at 6:25 PM EAT (3:25 PM UTC)
+    - cron: '25 15 * * *'
+
+# Runs at 6:30 PM EAT (3:30 PM UTC)
+    - cron: '30 15 * * *'
+
+# Runs at 6:35 PM EAT (3:35 PM UTC)
+    - cron: '35 15 * * *'
+
+# Runs at 6:40 PM EAT (3:40 PM UTC)
+    - cron: '40 15 * * *'
+
+# Runs at 6:45 PM EAT (3:45 PM UTC)
+    - cron: '45 15 * * *'
+
+# Runs at 6:50 PM EAT (3:50 PM UTC)
+    - cron: '50 15 * * *'
+
+# Runs at 6:55 PM EAT (3:55 PM UTC)
+    - cron: '55 15 * * *'
+
+# Runs at 7:00 PM EAT (4:00 PM UTC)
+    - cron: '0 16 * * *'
+
+# Runs at 7:05 PM EAT (4:05 PM UTC)
+    - cron: '5 16 * * *'
+
+# Runs at 7:10 PM EAT (4:10 PM UTC)
+    - cron: '10 16 * * *'
+
+# Runs at 7:15 PM EAT (4:15 PM UTC)
+    - cron: '15 16 * * *'
+
+# Runs at 7:20 PM EAT (4:20 PM UTC)
+    - cron: '20 16 * * *'
+
+# Runs at 7:25 PM EAT (4:25 PM UTC)
+    - cron: '25 16 * * *'
+
+# Runs at 7:30 PM EAT (4:30 PM UTC)
+    - cron: '30 16 * * *'
+
+# Runs at 7:35 PM EAT (4:35 PM UTC)
+    - cron: '35 16 * * *'
+
+# Runs at 7:40 PM EAT (4:40 PM UTC)
+    - cron: '40 16 * * *'
+
+# Runs at 7:45 PM EAT (4:45 PM UTC)
+    - cron: '45 16 * * *'
+
+# Runs at 7:50 PM EAT (4:50 PM UTC)
+    - cron: '50 16 * * *'
+
+# Runs at 7:55 PM EAT (4:55 PM UTC)
+    - cron: '55 16 * * *'
+
+# Runs at 8:00 PM EAT (5:00 PM UTC)
+    - cron: '0 17 * * *'
+
+# Runs at 8:05 PM EAT (5:05 PM UTC)
+    - cron: '5 17 * * *'
+
+# Runs at 8:10 PM EAT (5:10 PM UTC)
+    - cron: '10 17 * * *'
+
+# Runs at 8:15 PM EAT (5:15 PM UTC)
+    - cron: '15 17 * * *'
+
+# Runs at 8:20 PM EAT (5:20 PM UTC)
+    - cron: '20 17 * * *'
+
+# Runs at 8:25 PM EAT (5:25 PM UTC)
+    - cron: '25 17 * * *'
+
+# Runs at 8:30 PM EAT (5:30 PM UTC)
+    - cron: '30 17 * * *'
+
+# Runs at 8:35 PM EAT (5:35 PM UTC)
+    - cron: '35 17 * * *'
+
+# Runs at 8:40 PM EAT (5:40 PM UTC)
+    - cron: '40 17 * * *'
+
+# Runs at 8:45 PM EAT (5:45 PM UTC)
+    - cron: '45 17 * * *'
+
+# Runs at 8:50 PM EAT (5:50 PM UTC)
+    - cron: '50 17 * * *'
+
+# Runs at 8:55 PM EAT (5:55 PM UTC)
+    - cron: '55 17 * * *'
+
+# Runs at 9:00 PM EAT (6:00 PM UTC)
+    - cron: '0 18 * * *'
+
+# Runs at 9:05 PM EAT (6:05 PM UTC)
+    - cron: '5 18 * * *'
+
+# Runs at 9:10 PM EAT (6:10 PM UTC)
+    - cron: '10 18 * * *'
+
+# Runs at 9:15 PM EAT (6:15 PM UTC)
+    - cron: '15 18 * * *'
+
+# Runs at 9:20 PM EAT (6:20 PM UTC)
+    - cron: '20 18 * * *'
+
+# Runs at 9:25 PM EAT (6:25 PM UTC)
+    - cron: '25 18 * * *'
+
+# Runs at 9:30 PM EAT (6:30 PM UTC)
+    - cron: '30 18 * * *'
+
+# Runs at 9:35 PM EAT (6:35 PM UTC)
+    - cron: '35 18 * * *'
+
+# Runs at 9:40 PM EAT (6:40 PM UTC)
+    - cron: '40 18 * * *'
+
+# Runs at 9:45 PM EAT (6:45 PM UTC)
+    - cron: '45 18 * * *'
+
+# Runs at 9:50 PM EAT (6:50 PM UTC)
+    - cron: '50 18 * * *'
+
+# Runs at 9:55 PM EAT (6:55 PM UTC)
+    - cron: '55 18 * * *'
+
+# Runs at 10:00 PM EAT (7:00 PM UTC)
+    - cron: '0 19 * * *'
+
+# Runs at 10:05 PM EAT (7:05 PM UTC)
+    - cron: '5 19 * * *'
+
+# Runs at 10:10 PM EAT (7:10 PM UTC)
+    - cron: '10 19 * * *'
+
+# Runs at 10:15 PM EAT (7:15 PM UTC)
+    - cron: '15 19 * * *'
+
+# Runs at 10:20 PM EAT (7:20 PM UTC)
+    - cron: '20 19 * * *'
+
+# Runs at 10:25 PM EAT (7:25 PM UTC)
+    - cron: '25 19 * * *'
+
+# Runs at 10:30 PM EAT (7:30 PM UTC)
+    - cron: '30 19 * * *'
+
+# Runs at 10:35 PM EAT (7:35 PM UTC)
+    - cron: '35 19 * * *'
+
+# Runs at 10:40 PM EAT (7:40 PM UTC)
+    - cron: '40 19 * * *'
+
+# Runs at 10:45 PM EAT (7:45 PM UTC)
+    - cron: '45 19 * * *'
+
+# Runs at 10:50 PM EAT (7:50 PM UTC)
+    - cron: '50 19 * * *'
+
+# Runs at 10:55 PM EAT (7:55 PM UTC)
+    - cron: '55 19 * * *'
+
+# Runs at 11:00 PM EAT (8:00 PM UTC)
+    - cron: '0 20 * * *'
+
+# Runs at 11:05 PM EAT (8:05 PM UTC)
+    - cron: '5 20 * * *'
+
+# Runs at 11:10 PM EAT (8:10 PM UTC)
+    - cron: '10 20 * * *'
+
+# Runs at 11:15 PM EAT (8:15 PM UTC)
+    - cron: '15 20 * * *'
+
+# Runs at 11:20 PM EAT (8:20 PM UTC)
+    - cron: '20 20 * * *'
+
+# Runs at 11:25 PM EAT (8:25 PM UTC)
+    - cron: '25 20 * * *'
+
+# Runs at 11:30 PM EAT (8:30 PM UTC)
+    - cron: '30 20 * * *'
+
+# Runs at 11:35 PM EAT (8:35 PM UTC)
+    - cron: '35 20 * * *'
+
+# Runs at 11:40 PM EAT (8:40 PM UTC)
+    - cron: '40 20 * * *'
+
+# Runs at 11:45 PM EAT (8:45 PM UTC)
+    - cron: '45 20 * * *'
+
+# Runs at 11:50 PM EAT (8:50 PM UTC)
+    - cron: '50 20 * * *'
+
+# Runs at 11:55 PM EAT (8:55 PM UTC)
+    - cron: '55 20 * * *'
+
+# Runs at 12:00 AM EAT (9:00 PM UTC)
+    - cron: '0 21 * * *'
+
+# Runs at 12:05 AM EAT (9:05 PM UTC)
+    - cron: '5 21 * * *'
+
+# Runs at 12:10 AM EAT (9:10 PM UTC)
+    - cron: '10 21 * * *'
+
+# Runs at 12:15 AM EAT (9:15 PM UTC)
+    - cron: '15 21 * * *'
+
+# Runs at 12:20 AM EAT (9:20 PM UTC)
+    - cron: '20 21 * * *'
+
+# Runs at 12:25 AM EAT (9:25 PM UTC)
+    - cron: '25 21 * * *'
+
 # Runs at 12:30 AM EAT (9:30 PM UTC)
     - cron: '30 21 * * *'
 
