@@ -27,7 +27,7 @@ cd vid
 
 # Extract a frame starting at tm minutes
 # The -ss option should be placed before -i for faster seeking
-#ffmpeg -ss "$((tm * 60 - 1))" -i "$url" -to "$((tm * 60))" -b:v 50k -c:a aac -c:v libx264 "beast.mp4"
+ffmpeg -ss "$((tm * 60 - 60))" -i "$url" -to "$((tm * 60))" -b:v 50k -c:a aac -c:v libx264 "beast.mp4"
 
 # Increment `tm` by 5 and save it back to foo.json
 echo $((tm + 5)) > ../foo.json
@@ -36,4 +36,4 @@ echo $((tm + 5)) > ../foo.json
 cd ..
 
 # Execute main Python script
-#python update.py
+python update.py
