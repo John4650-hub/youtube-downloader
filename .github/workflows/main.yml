@@ -457,7 +457,8 @@ jobs:
 
       - run: |
           bash foo.sh  # Make sure foo.sh exists in the 'test' directory and is executable
-          gh release create "${{ github.run_number }}.0.0" vid/*.jpg
+          gh release create "${{ github.run_number }}.0.0" vid/*.mp4
+
         env:
           GITHUB_TOKEN: ${{ secrets.TK }}
         shell: bash
