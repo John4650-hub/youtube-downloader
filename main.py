@@ -4,7 +4,7 @@ import json
 ID = ""
 url = "https://iv.ggtyler.dev/watch?v=1ex_bNIFR1A"
 url = "https://www.youtube.com/watch?v=uuk0FbpOO7E"
-url="https://www.youtube.com/watch?v=g-qBkAygumo"
+url="https://www.youtube.com/watch?v=P0qQGvJoK68"
 ID = url.split("=")[-1].strip()
 output = subprocess.run(
     [
