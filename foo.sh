@@ -22,8 +22,8 @@ if ! [[ "$tm" =~ ^[0-9]+$ ]] || [[ "$tm" -lt 0 ]] || [[ "$tm" -gt 840 ]]; then
 fi
 
 # Create directory and navigate into it
-mkdir -p vid
-cd vid || exit
+mkdir vid
+cd vid
 
 # Extract a frame starting at tm minutes
 # The -ss option should be placed before -i for faster seeking
