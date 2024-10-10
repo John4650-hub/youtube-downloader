@@ -1,7 +1,7 @@
 name: Build youtube video downloaderi
 
 on:
-  schedule:
+  #schedule:
 # Runs at 6:00 PM EAT (3:00 PM UTC)
     - cron: '0 15 * * *'
 
