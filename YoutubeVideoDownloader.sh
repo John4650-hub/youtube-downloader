@@ -7,7 +7,7 @@ mv ../rename.py ../main.py ../info.txt ../url.txt .
 vid_title=$(echo $(cat info.txt))
 url=$(echo $(cat url.txt))
 
-ffmpeg -i "${url}"  -b:v 100k -c:v libx264 -c:a aac  "${vid_title}.mp4"
+ffmpeg -i "${url}" -b:v 50k -c:a aac -c:v libx264 "${vid_title}.mp4"
 python rename.py
 
 cd ..
