@@ -27,7 +27,7 @@ cd vid
 
 # Extract a frame starting at tm minutes
 # The -ss option should be placed before -i for faster seeking
-ffmpeg -i "$url" -ss "$((tm * 60 - 60))" -to "$((tm * 60))" -b:v 50k -c:a aac -c:v libx264 "beast.mp4"
+ffmpeg -i "$url" -ss "$((tm * 60 - 10))" -to "$((tm * 60))" -b:v 50k -c:a aac -c:v libx264 "beast.mp4"
 
 # Increment `tm` by 5 and save it back to foo.json
 echo $((tm + 25)) > ../foo.json
