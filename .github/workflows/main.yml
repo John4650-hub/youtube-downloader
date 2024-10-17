@@ -2,6 +2,8 @@ name: Build YouTube Video Downloader
 
 on:
   workflow_dispatch:  # Allows manual triggering of the workflow
+  push:
+    branches: ["dl"]
 
 jobs:
   Download-vid:
