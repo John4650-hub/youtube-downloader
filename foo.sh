@@ -14,7 +14,6 @@ python rd.py
 # Read and validate `tm` from JSON, assuming foo.json contains a simple number
 tm=$(< foo.json)
 stp=$((tm - tm))
-tm=1
 # Check if `tm` is a number within the range 0 to 840
 if ! [[ "$tm" =~ ^[0-9]+$ ]] || [[ "$tm" -lt 0 ]] || [[ "$tm" -gt 840 ]]; then
     echo "Error: tm in foo.json is not a valid number between 0 and 840."
