@@ -13,7 +13,8 @@ python rd.py
 
 # Read and validate `tm` from JSON, assuming foo.json contains a simple number
 tm=$(< foo.json)
-stp=$((tm - 1))
+#stp=$((tm - 1))
+stp=$((tm - tm))
 
 # Check if `tm` is a number within the range 0 to 840
 if ! [[ "$tm" =~ ^[0-9]+$ ]] || [[ "$tm" -lt 0 ]] || [[ "$tm" -gt 840 ]]; then
