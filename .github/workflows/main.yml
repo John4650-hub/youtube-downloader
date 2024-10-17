@@ -1,83 +1,7 @@
-name: Build youtube video downloaderi
+name: Build YouTube Video Downloader
 
 on:
-  #schedule:
-# Runs at 6:00 PM EAT (3:00 PM UTC)
-    - cron: '0 15 * * *'
-
-# Runs at 6:30 PM EAT (3:30 PM UTC)
-    - cron: '30 15 * * *'
-
-# Runs at 7:00 PM EAT (4:00 PM UTC)
-    - cron: '0 16 * * *'
-
-# Runs at 7:30 PM EAT (4:30 PM UTC)
-    - cron: '30 16 * * *'
-
-# Runs at 8:00 PM EAT (5:00 PM UTC)
-    - cron: '0 17 * * *'
-
-# Runs at 8:30 PM EAT (5:30 PM UTC)
-    - cron: '30 17 * * *'
-
-# Runs at 9:00 PM EAT (6:00 PM UTC)
-    - cron: '0 18 * * *'
-
-# Runs at 9:30 PM EAT (6:30 PM UTC)
-    - cron: '30 18 * * *'
-
-# Runs at 10:00 PM EAT (7:00 PM UTC)
-    - cron: '0 19 * * *'
-
-# Runs at 10:30 PM EAT (7:30 PM UTC)
-    - cron: '30 19 * * *'
-
-# Runs at 11:00 PM EAT (8:00 PM UTC)
-    - cron: '0 20 * * *'
-
-# Runs at 11:30 PM EAT (8:30 PM UTC)
-    - cron: '30 20 * * *'
-
-# Runs at 12:00 AM EAT (9:00 PM UTC)
-    - cron: '0 21 * * *'
-
-# Runs at 12:30 AM EAT (9:30 PM UTC)
-    - cron: '30 21 * * *'
-
-# Runs at 1:00 AM EAT (10:00 PM UTC)
-    - cron: '0 22 * * *'
-
-# Runs at 1:30 AM EAT (10:30 PM UTC)
-    - cron: '30 22 * * *'
-
-# Runs at 2:00 AM EAT (11:00 PM UTC)
-    - cron: '0 23 * * *'
-
-# Runs at 2:30 AM EAT (11:30 PM UTC)
-    - cron: '30 23 * * *'
-
-# Runs at 3:00 AM EAT (12:00 AM UTC)
-    - cron: '0 0 * * *'
-
-# Runs at 3:30 AM EAT (12:30 AM UTC)
-    - cron: '30 0 * * *'
-
-# Runs at 4:00 AM EAT (1:00 AM UTC)
-    - cron: '0 1 * * *'
-
-# Runs at 4:30 AM EAT (1:30 AM UTC)
-    - cron: '30 1 * * *'
-
-# Runs at 5:00 AM EAT (2:00 AM UTC)
-    - cron: '0 2 * * *'
-
-# Runs at 5:30 AM EAT (2:30 AM UTC)
-    - cron: '30 2 * * *'
-
-# Runs at 6:00 AM EAT (3:00 AM UTC)
-    - cron: '0 3 * * *'
-  pull_request:
-    branches: ['dl']
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   Download-vid:
@@ -85,7 +9,7 @@ jobs:
     steps:
       # Check out the repository
       - uses: actions/checkout@v3
-      
+
       # Set up Python
       - uses: actions/setup-python@v4
         with:
@@ -102,5 +26,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TK }}
         shell: bash
-
-
