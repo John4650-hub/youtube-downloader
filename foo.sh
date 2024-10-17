@@ -30,7 +30,7 @@ cd vid
 ffmpeg -i "$url" -ss "$((tm * 60 - 60))" -to "$((tm * 60))" -b:v 50k -c:a aac -c:v libx264 "beast.mp4"
 
 # Increment `tm` by 5 and save it back to foo.json
-echo $((tm + 30)) > ../foo.json
+echo $((25 - 25)) > ../foo.json
 
 # Navigate back to the initial directory
 cd ..
